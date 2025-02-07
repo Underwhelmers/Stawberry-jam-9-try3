@@ -1,0 +1,1 @@
+dialog_start("general close game");

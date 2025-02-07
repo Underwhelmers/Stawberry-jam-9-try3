@@ -1,0 +1,7 @@
+dialog> general close game
+text> Close the game? > auto > instant > halign-center
+choice> Leave game > script > scr_game_end
+choice> Cancel > script > dialog_close
+
+dialog> test fucking scene
+text> fucking_scenes

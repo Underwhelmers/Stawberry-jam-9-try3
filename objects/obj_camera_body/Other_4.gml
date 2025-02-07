@@ -1,0 +1,1 @@
+global.camera.setup_viewport();

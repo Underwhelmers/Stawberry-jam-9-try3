@@ -1,0 +1,43 @@
+{
+  "$GMObject":"",
+  "%Name":"btn_gui_with_text",
+  "eventList":[
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":64,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+  ],
+  "managed":true,
+  "name":"btn_gui_with_text",
+  "overriddenProperties":[],
+  "parent":{
+    "name":"GUI",
+    "path":"folders/0 - General/General GUI/Buttons/GUI.yy",
+  },
+  "parentObjectId":{
+    "name":"btn_gui_only_icon",
+    "path":"objects/btn_gui_only_icon/btn_gui_only_icon.yy",
+  },
+  "persistent":false,
+  "physicsAngularDamping":0.1,
+  "physicsDensity":0.5,
+  "physicsFriction":0.2,
+  "physicsGroup":1,
+  "physicsKinematic":false,
+  "physicsLinearDamping":0.1,
+  "physicsObject":false,
+  "physicsRestitution":0.1,
+  "physicsSensor":false,
+  "physicsShape":1,
+  "physicsShapePoints":[],
+  "physicsStartAwake":true,
+  "properties":[
+    {"$GMObjectProperty":"v1","%Name":"text","filters":[],"listItems":[],"multiselect":false,"name":"text","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"UNLOADED TEXT","varType":2,},
+  ],
+  "resourceType":"GMObject",
+  "resourceVersion":"2.0",
+  "solid":false,
+  "spriteId":{
+    "name":"spr_button_option",
+    "path":"sprites/spr_button_option/spr_button_option.yy",
+  },
+  "spriteMaskId":null,
+  "visible":true,
+}
