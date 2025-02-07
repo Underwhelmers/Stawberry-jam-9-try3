@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"Body",
+  "%Name":"BodyPart",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"Body",
+  "name":"BodyPart",
   "parent":{
     "name":"Body",
     "path":"folders/3 - Run tent enc/Body.yy",

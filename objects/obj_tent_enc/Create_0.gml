@@ -1,5 +1,5 @@
-var _kobold = new TentEncKobold({ name: "Firk" });
-var _player = new TentEncPlayer({ name: "Anon" });
+var _kobold = new TentEncRandomParticipant({ name: "Firk" });
+var _player = new TentEncRandomParticipant({ name: "Anon" });
 simulation = new TentEncSimulation(_player, _kobold);
 
 
