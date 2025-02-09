@@ -1,12 +1,12 @@
 {
   "$GMScript":"v1",
-  "%Name":"Body",
+  "%Name":"array_clone",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"Body",
+  "name":"array_clone",
   "parent":{
-    "name":"Body",
-    "path":"folders/3 - Run tent enc/Body.yy",
+    "name":"Arrays",
+    "path":"folders/0 - General/Scripts/Arrays.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

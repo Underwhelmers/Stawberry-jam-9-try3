@@ -1,4 +1,6 @@
 function choose_from_distinct(_array, _ammount) {
+	if (_ammount == 0) return [];
+	
 	var _orig_size = array_length(_array);
 	if (_orig_size < _ammount) {
 		throw ("Ammount bigger than array.");
