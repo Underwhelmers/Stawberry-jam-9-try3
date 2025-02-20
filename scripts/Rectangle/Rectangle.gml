@@ -1,36 +1,34 @@
 function Rectangle(_x1 = 0,_y1 = 0, _x2 = 0, _y2 = 0) constructor {
-	static initialize = function(_x1, _y1, _x2, _y2) {
-		x1 = _x1;
-		y1 = _y1;
+	x1 = _x1;
+	y1 = _y1;
 	
-		x2 = _x2;
-		y2 = _y2;
+	x2 = _x2;
+	y2 = _y2;
 	
-		if (x1 < x2) {
-			xleft = x1;
-			xright = x2;
-		} else {
-			xleft = x2;
-			xright = x1;
-		}
-		
-		if (y1 < y2) {
-			ytop = y1;
-			ybot = y2;
-		} else {
-			ytop = y2;
-			ybot = y1;
-		}
-		
-		xcenter = (x1+x2)/2;
-		ycenter = (y1+y2)/2;
-	
-		width = xright-xleft;
-		height = ybot-ytop;
-		
-		half_width = width/2;
-		half_height = height/2;
+	if (x1 < x2) {
+		xleft = x1;
+		xright = x2;
+	} else {
+		xleft = x2;
+		xright = x1;
 	}
+		
+	if (y1 < y2) {
+		ytop = y1;
+		ybot = y2;
+	} else {
+		ytop = y2;
+		ybot = y1;
+	}
+		
+	xcenter = (x1+x2)/2;
+	ycenter = (y1+y2)/2;
+	
+	width = xright-xleft;
+	height = ybot-ytop;
+		
+	half_width = width/2;
+	half_height = height/2;
 	
 	
 	static move_pos = function(_deltax, _deltay) {
@@ -54,13 +52,10 @@ function Rectangle(_x1 = 0,_y1 = 0, _x2 = 0, _y2 = 0) constructor {
 			&& ybot   >= _other.ytop;
 	}
 	
-	static cover_text = function(_xleft,_ytop,_text,_font = fnt_default) {
+	static make_from_text = function(_xleft,_ytop,_text,_font = fnt_default) {
 		draw_set_font(_font);
-		initialize(_xleft, _ytop, _xleft+string_width(_text), _ytop+string_height(_text));
+		var _rect = new Rectangle(_xleft, _ytop, _xleft+string_width(_text), _ytop+string_height(_text));
 		draw_set_font(fnt_default);
-		return self;
+		return _rect;
 	}
-	
-	
-	initialize(_x1,_y1,_x2,_y2);
 }

@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"new_instance",
   "parent":{
-    "name":"Functions",
-    "path":"folders/0 - General/Scripts/Functions.yy",
+    "name":"Helper functions",
+    "path":"folders/0 - General/Helper functions.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"Holder",
   "parent":{
-    "name":"Position related",
-    "path":"folders/0 - General/Scripts/Position related.yy",
+    "name":"Position structs",
+    "path":"folders/0 - General/Position structs.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

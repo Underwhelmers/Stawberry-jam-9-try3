@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"ValueBag",
   "parent":{
-    "name":"Data structures",
-    "path":"folders/0 - General/Data structures.yy",
+    "name":"Randomizer structs",
+    "path":"folders/0 - General/Randomizer structs.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

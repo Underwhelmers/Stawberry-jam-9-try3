@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"SortedList",
   "parent":{
-    "name":"Data structures",
-    "path":"folders/0 - General/Data structures.yy",
+    "name":"Data Structures",
+    "path":"folders/0 - General/Data Structures.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

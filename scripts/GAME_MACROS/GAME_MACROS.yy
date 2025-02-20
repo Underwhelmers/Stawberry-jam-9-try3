@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"GAME_MACROS",
   "parent":{
-    "name":"Scripts",
-    "path":"folders/0 - General/Scripts.yy",
+    "name":"0 - General",
+    "path":"folders/0 - General.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

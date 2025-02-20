@@ -266,7 +266,7 @@
   "name":"fnt_default",
   "parent":{
     "name":"Fonts",
-    "path":"folders/0 - General/General GUI/Fonts.yy",
+    "path":"folders/0 - General GUI/Fonts.yy",
   },
   "pointRounding":0,
   "ranges":[

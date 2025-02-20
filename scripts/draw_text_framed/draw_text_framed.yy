@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"draw_text_framed",
   "parent":{
-    "name":"Custom draws",
-    "path":"folders/0 - General/Scripts/Custom draws.yy",
+    "name":"Text Functions",
+    "path":"folders/0 - General/Text Functions.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

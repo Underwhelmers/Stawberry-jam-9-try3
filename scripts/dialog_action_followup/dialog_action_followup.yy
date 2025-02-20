@@ -6,7 +6,7 @@
   "name":"dialog_action_followup",
   "parent":{
     "name":"Interpret actions",
-    "path":"folders/0 - General/Dialog system/Scripts/Interpret actions.yy",
+    "path":"folders/0 - Dialog system/Scripts/Interpret actions.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

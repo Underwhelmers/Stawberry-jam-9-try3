@@ -11,11 +11,11 @@
   "overriddenProperties":[],
   "parent":{
     "name":"Objects",
-    "path":"folders/0 - General/Dialog system/Objects.yy",
+    "path":"folders/0 - Dialog system/Objects.yy",
   },
   "parentObjectId":{
-    "name":"btn_gui_only_icon",
-    "path":"objects/btn_gui_only_icon/btn_gui_only_icon.yy",
+    "name":"bnt_gui_only_icon",
+    "path":"objects/bnt_gui_only_icon/bnt_gui_only_icon.yy",
   },
   "persistent":false,
   "physicsAngularDamping":0.1,

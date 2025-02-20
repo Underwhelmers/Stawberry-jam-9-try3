@@ -1,4 +1,4 @@
-function pos_separated_squares(area_width, area_height, iterations, array_of_rectangles) {
+function pos_separated_squares(area_width, area_height, array_of_rectangles) {
     var n = array_length(array_of_rectangles);
     
     // 1. Initially, position each rectangle at a random location within the area.
@@ -17,35 +17,11 @@ function pos_separated_squares(area_width, area_height, iterations, array_of_rec
     
     // 2. Iteratively adjust positions so that rectangles are separated,
     //    taking into account their dimensions.
+    var iterations = 1000;
     var margin = 5; // Additional margin (in cm)
     for (var it = 0; it < iterations; it++) {
         var moved = false;
         
-		// Border repulsion: push any rectangle that gets too close to the area's borders.
-        for (var i = 0; i < n; i++) {
-            var rect = array_of_rectangles[i];
-            var forceX = 0;
-            var forceY = 0;
-            
-            if (rect.xleft < margin) {
-                forceX += (margin - rect.xleft);
-            }
-            if (rect.xright > area_width - margin) {
-                forceX -= (rect.xright - (area_width - margin));
-            }
-            if (rect.ytop < margin) {
-                forceY += (margin - rect.ytop);
-            }
-            if (rect.ybot > area_height - margin) {
-                forceY -= (rect.ybot - (area_height - margin));
-            }
-            
-            if (forceX != 0 || forceY != 0) {
-                rect.move_pos(forceX, forceY);
-                moved = true;
-            }
-        }
-		
         // Check all pairs of rectangles for overlap.
         for (var i = 0; i < n; i++) {
             var A = array_of_rectangles[i];
@@ -54,7 +30,6 @@ function pos_separated_squares(area_width, area_height, iterations, array_of_rec
                 
 				if (!A.check_collision(B))
 					continue;
-					
 				moved = true;
 				
                 // Compute half sizes.
@@ -111,6 +86,31 @@ function pos_separated_squares(area_width, area_height, iterations, array_of_rec
                         }
                     }
                 }
+            }
+        }
+        
+        // Border repulsion: push any rectangle that gets too close to the area's borders.
+        for (var i = 0; i < n; i++) {
+            var rect = array_of_rectangles[i];
+            var forceX = 0;
+            var forceY = 0;
+            
+            if (rect.xleft < margin) {
+                forceX += (margin - rect.xleft);
+            }
+            if (rect.xright > area_width - margin) {
+                forceX -= (rect.xright - (area_width - margin));
+            }
+            if (rect.ytop < margin) {
+                forceY += (margin - rect.ytop);
+            }
+            if (rect.ybot > area_height - margin) {
+                forceY -= (rect.ybot - (area_height - margin));
+            }
+            
+            if (forceX != 0 || forceY != 0) {
+                rect.move_pos(forceX, forceY);
+                moved = true;
             }
         }
         

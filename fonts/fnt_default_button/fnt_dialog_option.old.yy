@@ -3623,14 +3623,14 @@
   "name":"fnt_dialog_option",
   "parent":{
     "name":"Assets",
-    "path":"folders/0 - General/Dialog system/Assets.yy",
+    "path":"folders/General/Dialog system/Assets.yy",
   },
   "pointRounding":0,
   "ranges":[
     {"lower":32,"upper":127,},
     {"lower":9647,"upper":9647,},
   ],
-  "regenerateBitmap":true,
+  "regenerateBitmap":false,
   "resourceType":"GMFont",
   "resourceVersion":"2.0",
   "sampleText":"abcdef ABCDEF\n0123456789 .,<>\"'&!?\nthe quick brown fox jumps over the lazy dog\nTHE QUICK BROWN FOX JUMPS OVER THE LAZY DOG\nDefault character: ▯ (9647)",

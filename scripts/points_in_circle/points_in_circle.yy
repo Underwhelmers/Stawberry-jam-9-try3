@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"points_in_circle",
   "parent":{
-    "name":"Functions",
-    "path":"folders/0 - General/Scripts/Functions.yy",
+    "name":"Position functions",
+    "path":"folders/0 - General/Position functions.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

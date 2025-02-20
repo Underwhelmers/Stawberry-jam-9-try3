@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"success",
   "parent":{
-    "name":"Functions",
-    "path":"folders/0 - General/Scripts/Functions.yy",
+    "name":"Randomizer function",
+    "path":"folders/0 - General/Randomizer function.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

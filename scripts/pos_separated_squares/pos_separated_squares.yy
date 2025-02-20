@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"pos_separated_squares",
   "parent":{
-    "name":"Position related",
-    "path":"folders/0 - General/Scripts/Position related.yy",
+    "name":"Position functions",
+    "path":"folders/0 - General/Position functions.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

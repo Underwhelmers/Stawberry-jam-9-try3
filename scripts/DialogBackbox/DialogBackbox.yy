@@ -6,7 +6,7 @@
   "name":"DialogBackbox",
   "parent":{
     "name":"Objects",
-    "path":"folders/0 - General/Dialog system/Objects.yy",
+    "path":"folders/0 - Dialog system/Objects.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

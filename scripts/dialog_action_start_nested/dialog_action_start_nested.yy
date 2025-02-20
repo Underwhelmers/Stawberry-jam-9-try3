@@ -6,7 +6,7 @@
   "name":"dialog_action_start_nested",
   "parent":{
     "name":"Interpret actions",
-    "path":"folders/0 - General/Dialog system/Scripts/Interpret actions.yy",
+    "path":"folders/0 - Dialog system/Scripts/Interpret actions.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

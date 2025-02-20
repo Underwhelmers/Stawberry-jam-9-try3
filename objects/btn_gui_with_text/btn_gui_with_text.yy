@@ -8,12 +8,12 @@
   "name":"btn_gui_with_text",
   "overriddenProperties":[],
   "parent":{
-    "name":"GUI",
-    "path":"folders/0 - General/General GUI/Buttons/GUI.yy",
+    "name":"Buttons",
+    "path":"folders/0 - General GUI/Buttons.yy",
   },
   "parentObjectId":{
-    "name":"btn_gui_only_icon",
-    "path":"objects/btn_gui_only_icon/btn_gui_only_icon.yy",
+    "name":"bnt_gui_only_icon",
+    "path":"objects/bnt_gui_only_icon/bnt_gui_only_icon.yy",
   },
   "persistent":false,
   "physicsAngularDamping":0.1,
@@ -29,7 +29,7 @@
   "physicsShapePoints":[],
   "physicsStartAwake":true,
   "properties":[
-    {"$GMObjectProperty":"v1","%Name":"text","filters":[],"listItems":[],"multiselect":false,"name":"text","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"UNLOADED TEXT","varType":2,},
+    {"$GMObjectProperty":"v1","%Name":"text","filters":[],"listItems":[],"multiselect":false,"name":"text","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"NOT SET","varType":2,},
   ],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",

@@ -47,8 +47,8 @@
   },
   "origin":0,
   "parent":{
-    "name":"Buttons",
-    "path":"folders/0 - General/General GUI/Buttons.yy",
+    "name":"Images",
+    "path":"folders/0 - General GUI/Images.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

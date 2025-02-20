@@ -6,17 +6,13 @@ function DialogText(_backbox) constructor {
     progress = 0;
     x = 48 + backbox.x;
     y = 46 + backbox.y;
-    width = room_width - 88;
+    width = room_width - 80;
     base_progress_speed = 0.5;
-	halign = fa_left;
     
     static restart_tags = function() {
         progress_speed = base_progress_speed;
         unskippable = false;
         dont_wait = false;
-		halign = fa_left;
-		x = 48 + backbox.x;
-		y = 46 + backbox.y;
     }
     static set_speed = function(_value) {
         progress_speed = base_progress_speed * _value;
@@ -49,8 +45,6 @@ function DialogText(_backbox) constructor {
     }
     
     static draw = function() {
-		draw_set_halign(halign);
         draw_text_ext(x,y,to_display,-1,width);
-		draw_set_halign(fa_left);
     }
 }

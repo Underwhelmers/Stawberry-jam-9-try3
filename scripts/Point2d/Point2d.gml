@@ -73,3 +73,7 @@ function Point2d(_x = 0, _y = 0, _xoff = 0, _yoff = 0) constructor {
 		return y + yoffset;
 	}
 }
+
+function Point2d_distance(p1, p2) {
+	return point_distance(p1.x,p1.y, p2.x,p2.y);
+}

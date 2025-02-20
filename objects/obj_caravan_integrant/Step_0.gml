@@ -13,5 +13,5 @@ time_elapsed++;
 if (time_elapsed >= jump_timer) {
 	time_elapsed = 0;
 	is_jumping = !is_jumping;
-	jump_timer = is_jumping ? abs(x-base_x) : jump_timer_rnd.next_i();
+	jump_timer = is_jumping ? abs(x-base_x) : jump_timer_rnd.inext();
 }

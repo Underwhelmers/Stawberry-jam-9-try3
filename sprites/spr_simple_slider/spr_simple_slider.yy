@@ -46,8 +46,8 @@
   },
   "origin":3,
   "parent":{
-    "name":"Slider",
-    "path":"folders/0 - General/General GUI/Slider.yy",
+    "name":"Images",
+    "path":"folders/0 - General GUI/Images.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

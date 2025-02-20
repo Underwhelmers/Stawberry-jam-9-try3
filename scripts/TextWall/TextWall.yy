@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"TextWall",
   "parent":{
-    "name":"Text",
-    "path":"folders/0 - General/Scripts/Text.yy",
+    "name":"Text Structs",
+    "path":"folders/0 - General/Text Structs.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

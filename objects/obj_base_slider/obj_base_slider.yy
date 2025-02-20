@@ -13,7 +13,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"Slider",
-    "path":"folders/0 - General/General GUI/Slider.yy",
+    "path":"folders/0 - General GUI/Slider.yy",
   },
   "parentObjectId":null,
   "persistent":false,

@@ -11,7 +11,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"Camera",
-    "path":"folders/0 - General/General GUI/Camera.yy",
+    "path":"folders/0 - General GUI/Camera.yy",
   },
   "parentObjectId":null,
   "persistent":true,

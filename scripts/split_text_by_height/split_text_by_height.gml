@@ -50,7 +50,7 @@ function split_text_by_height(input_text, max_height, text_width) {
 	
 	for (var i = 0; i < array_length(chunks); i++) {
 		chunks[i] = string_trim(chunks[i]);
-		while (string_starts_with(chunks[i],"\n")) {
+		if (string_starts_with(chunks[i],"\n")) {
 			chunks[i] = string_copy(chunks[i],2,array_length(chunks)-1);
 		}
 	}

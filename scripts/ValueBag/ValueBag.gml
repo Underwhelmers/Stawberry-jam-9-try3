@@ -1,7 +1,6 @@
 function ValueBag(_values) constructor {
 	realvalues = _values;
 	remaining = ds_list_create();
-	
 	previous = 0;
 	
 	static get = function() {
@@ -18,5 +17,9 @@ function ValueBag(_values) constructor {
 			_pulled = ds_list_pull_random(remaining);
 		previous = _pulled;
 		return realvalues[_pulled];
+	}
+	
+	static from_raw_get = function(_number) {
+		return array_choose_unique(realvalues,_number);
 	}
 }

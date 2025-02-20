@@ -8,6 +8,6 @@ time_elapsed = 0;
 is_jumping = false;
 
 jump_timer_rnd = new Randomizer(20,45);
-jump_timer = jump_timer_rnd.next_i();
+jump_timer = jump_timer_rnd.inext();
 
 small_jump_threshold = 16;

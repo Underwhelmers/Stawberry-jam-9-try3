@@ -21,14 +21,9 @@ function scr_setup_interpolators() {
 	Interpolator.flip_cubed = new Interpolator(function(_val) { var _inv = (1-_val); return 1-_inv*_inv*_inv; });
 	Interpolator.inv_flip_cubed = new Interpolator(function(_val) { var _inv = (1-_val); return _inv*_inv*_inv; });
 	
-	// k = 10 Steepness factor; adjust as needed
-    Interpolator.normal = new Interpolator(function(_val) {
-		var k = 10;
-        return 1 / (1 + exp(-k * (_val - 0.5)));
-    });
-    
-    Interpolator.inv_normal = new Interpolator(function(_val) {
-		var k = 10;
-        return 1 - 1 / (1 + exp(-k * (_val - 0.5)));
+	Interpolator.normal = new Interpolator(function(_val) {
+        var u = max(_val, 0.0000000001); // Avoid log(0)
+        var z = sqrt(-2 * ln(u)) * cos(2 * pi * _val); // Standard normal transform
+        return clamp((z + 3) / 6, 0, 1); // Normalize from approx [-3,3] to [0,1]
     });
 }
