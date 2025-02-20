@@ -185,6 +185,7 @@
     {"id":{"name":"scr_global_func_initializer","path":"scripts/scr_global_func_initializer/scr_global_func_initializer.yy",},},
     {"id":{"name":"scr_set_scale_of","path":"scripts/scr_set_scale_of/scr_set_scale_of.yy",},},
     {"id":{"name":"scr_set_scale","path":"scripts/scr_set_scale/scr_set_scale.yy",},},
+    {"id":{"name":"scr_setup_text_scene","path":"scripts/scr_setup_text_scene/scr_setup_text_scene.yy",},},
     {"id":{"name":"scr_setup_word_variants","path":"scripts/scr_setup_word_variants/scr_setup_word_variants.yy",},},
     {"id":{"name":"smooth_step","path":"scripts/smooth_step/smooth_step.yy",},},
     {"id":{"name":"SortedList","path":"scripts/SortedList/SortedList.yy",},},
