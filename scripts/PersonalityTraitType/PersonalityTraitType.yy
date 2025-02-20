@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"SceneParam",
+  "%Name":"PersonalityTraitType",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"SceneParam",
+  "name":"PersonalityTraitType",
   "parent":{
     "name":"Structs",
     "path":"folders/1 - Text scene setup/Structs.yy",
