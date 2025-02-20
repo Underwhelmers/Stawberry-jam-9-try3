@@ -1,4 +1,4 @@
-function TentEncBodyEyes(_features) {
+function TentEncBodyEyes(_features) constructor {
 	state = TentEncBodyEyesState.NEUTRAL;
 	features = _features;
 }

@@ -15,14 +15,14 @@ function TentEncBodyUbication(_id, _descriptor, _parents = []) constructor {
 function scr_setup_tent_enc_body_ubications() {
     // Create a global list to hold all ubications.
     global.all_tentenc_body_ubications = ds_list_create();
-	TentEncBodyUbication.VISIBLE = new TentEncBodyUbication("visible", "visible");
-	TentEncBodyUbication.INNERS  = new TentEncBodyUbication("inners" , "inners");
+	//TentEncBodyUbication.VISIBLE = new TentEncBodyUbication("visible", "visible");
+	//TentEncBodyUbication.INNERS  = new TentEncBodyUbication("inners" , "inners");
 	ds_list_clear(global.all_tentenc_body_ubications);
 	
     // ======================================================
     // Head & Face Regions
     // ======================================================
-    TentEncBodyUbication.HEAD   = new TentEncBodyUbication("head", "head"  , [TentEncBodyUbication.VISIBLE]);
+    TentEncBodyUbication.HEAD   = new TentEncBodyUbication("head", "head"  , []);
     TentEncBodyUbication.FACE   = new TentEncBodyUbication("face", "face"  , [TentEncBodyUbication.HEAD]);
     TentEncBodyUbication.EYES   = new TentEncBodyUbication("eyes", "eyes"  , [TentEncBodyUbication.FACE]);
     TentEncBodyUbication.EARS   = new TentEncBodyUbication("ears", "ears"  , [TentEncBodyUbication.FACE]);
@@ -33,7 +33,7 @@ function scr_setup_tent_enc_body_ubications() {
     // ======================================================
     // Torso Regions
     // ======================================================
-    TentEncBodyUbication.TORSO   = new TentEncBodyUbication("torso"  , "torso"  , [TentEncBodyUbication.VISIBLE]);
+    TentEncBodyUbication.TORSO   = new TentEncBodyUbication("torso"  , "torso"  , []);
     TentEncBodyUbication.CHEST   = new TentEncBodyUbication("chest"  , "chest"  , [TentEncBodyUbication.TORSO]);
     TentEncBodyUbication.BREASTS = new TentEncBodyUbication("breasts", "breasts", [TentEncBodyUbication.CHEST]);
     TentEncBodyUbication.NIPPLES = new TentEncBodyUbication("nipples", "nipples", [TentEncBodyUbication.BREASTS]);
@@ -51,7 +51,7 @@ function scr_setup_tent_enc_body_ubications() {
     // ======================================================
     // Pelvic Regions
     // ======================================================
-    TentEncBodyUbication.HIPS     = new TentEncBodyUbication("hips", "hips", [TentEncBodyUbication.VISIBLE]);
+    TentEncBodyUbication.HIPS     = new TentEncBodyUbication("hips", "hips", []);
     TentEncBodyUbication.GROINS   = new TentEncBodyUbication("groins", "groins", [TentEncBodyUbication.HIPS]);
     TentEncBodyUbication.BUTTOCKS = new TentEncBodyUbication("buttocks", "buttocks", [TentEncBodyUbication.HIPS]);
     
@@ -77,7 +77,7 @@ function scr_setup_tent_enc_body_ubications() {
     // ======================================================
     // Left Arm & Hand Subdivisions
     // ======================================================
-	TentEncBodyUbication.LEFT_ARM        = new TentEncBodyUbication("left_arm"      , "left arm"      , [TentEncBodyUbication.VISIBLE]);
+	TentEncBodyUbication.LEFT_ARM        = new TentEncBodyUbication("left_arm"      , "left arm"      , []);
     TentEncBodyUbication.LEFT_UPPER_ARM  = new TentEncBodyUbication("left_upper_arm", "left upper arm", [TentEncBodyUbication.LEFT_ARM, TentEncBodyUbication.SHOULDERS]);
     TentEncBodyUbication.LEFT_ELBOW      = new TentEncBodyUbication("left_elbow"    , "left elbow"    , [TentEncBodyUbication.LEFT_ARM]);
     TentEncBodyUbication.LEFT_FOREARM    = new TentEncBodyUbication("left_forearm"  , "left forearm"  , [TentEncBodyUbication.LEFT_ARM]);
@@ -87,7 +87,7 @@ function scr_setup_tent_enc_body_ubications() {
     // ======================================================
     // Right Arm & Hand Subdivisions
     // ======================================================
-	TentEncBodyUbication.RIGHT_ARM        = new TentEncBodyUbication("right_arm"      , "right arm"      , [TentEncBodyUbication.VISIBLE]);
+	TentEncBodyUbication.RIGHT_ARM        = new TentEncBodyUbication("right_arm"      , "right arm"      , []);
     TentEncBodyUbication.RIGHT_UPPER_ARM  = new TentEncBodyUbication("right_upper_arm", "right upper arm", [TentEncBodyUbication.RIGHT_ARM, TentEncBodyUbication.SHOULDERS]);
     TentEncBodyUbication.RIGHT_ELBOW      = new TentEncBodyUbication("right_elbow"    , "right elbow"    , [TentEncBodyUbication.RIGHT_ARM]);
     TentEncBodyUbication.RIGHT_FOREARM    = new TentEncBodyUbication("right_forearm"  , "right forearm"  , [TentEncBodyUbication.RIGHT_ARM]);
@@ -97,7 +97,7 @@ function scr_setup_tent_enc_body_ubications() {
     // ======================================================
     // Left Leg & Lower Limb Subdivisions
     // ======================================================
-    TentEncBodyUbication.LEFT_LEG   = new TentEncBodyUbication("left_leg"  , "left leg"  , [TentEncBodyUbication.VISIBLE]);
+    TentEncBodyUbication.LEFT_LEG   = new TentEncBodyUbication("left_leg"  , "left leg"  , []);
     TentEncBodyUbication.LEFT_THIGH = new TentEncBodyUbication("left_thigh", "left thigh", [TentEncBodyUbication.LEFT_LEG, TentEncBodyUbication.HIPS]);
     TentEncBodyUbication.LEFT_KNEE  = new TentEncBodyUbication("left_knee" , "left knee" , [TentEncBodyUbication.LEFT_LEG]);
     TentEncBodyUbication.LEFT_CALF  = new TentEncBodyUbication("left_calf" , "left calf" , [TentEncBodyUbication.LEFT_LEG]);
@@ -107,7 +107,7 @@ function scr_setup_tent_enc_body_ubications() {
     // ======================================================
     // Right Leg & Lower Limb Subdivisions
     // ======================================================
-	TentEncBodyUbication.RIGHT_LEG   = new TentEncBodyUbication("right_leg"  , "right leg"  , [TentEncBodyUbication.VISIBLE]);
+	TentEncBodyUbication.RIGHT_LEG   = new TentEncBodyUbication("right_leg"  , "right leg"  , []);
     TentEncBodyUbication.RIGHT_THIGH = new TentEncBodyUbication("right_thigh", "right thigh", [TentEncBodyUbication.RIGHT_LEG, TentEncBodyUbication.HIPS]);
     TentEncBodyUbication.RIGHT_KNEE  = new TentEncBodyUbication("right_knee" , "right knee" , [TentEncBodyUbication.RIGHT_LEG]);
     TentEncBodyUbication.RIGHT_CALF  = new TentEncBodyUbication("right_calf" , "right calf" , [TentEncBodyUbication.RIGHT_LEG]);
@@ -117,12 +117,12 @@ function scr_setup_tent_enc_body_ubications() {
     // ======================================================
     // Inners
     // ======================================================
-	TentEncBodyUbication.VAGINA   = new TentEncBodyUbication("vagina"  , "vagina"  , [TentEncBodyUbication.INNERS]);
-	TentEncBodyUbication.CERVIX   = new TentEncBodyUbication("cervix"  , "cervix"  , [TentEncBodyUbication.INNERS]);
-	TentEncBodyUbication.UTERUS   = new TentEncBodyUbication("uterus"  , "uterus"  , [TentEncBodyUbication.INNERS]);
+	TentEncBodyUbication.VAGINA   = new TentEncBodyUbication("vagina"  , "vagina"  , []);
+	TentEncBodyUbication.CERVIX   = new TentEncBodyUbication("cervix"  , "cervix"  , []);
+	TentEncBodyUbication.UTERUS   = new TentEncBodyUbication("uterus"  , "uterus"  , []);
 	
-	TentEncBodyUbication.RECTUM   = new TentEncBodyUbication("rectum"  , "rectum"  , [TentEncBodyUbication.INNERS]);
-	TentEncBodyUbication.GUTS     = new TentEncBodyUbication("guts"    , "guts"    , [TentEncBodyUbication.INNERS]);
-	TentEncBodyUbication.STOMACH  = new TentEncBodyUbication("stomach" , "stomach" , [TentEncBodyUbication.INNERS]);
-	TentEncBodyUbication.THROAT   = new TentEncBodyUbication("throat"  , "throat"  , [TentEncBodyUbication.INNERS]);
+	TentEncBodyUbication.RECTUM   = new TentEncBodyUbication("rectum"  , "rectum"  , []);
+	TentEncBodyUbication.GUTS     = new TentEncBodyUbication("guts"    , "guts"    , []);
+	TentEncBodyUbication.STOMACH  = new TentEncBodyUbication("stomach" , "stomach" , []);
+	TentEncBodyUbication.THROAT   = new TentEncBodyUbication("throat"  , "throat"  , []);
 }
