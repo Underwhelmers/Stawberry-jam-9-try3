@@ -1,12 +1,12 @@
 {
   "$GMScript":"v1",
-  "%Name":"Scene",
+  "%Name":"symobj_key",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"Scene",
+  "name":"symobj_key",
   "parent":{
-    "name":"Structs",
-    "path":"folders/1 - Text scene setup/Structs.yy",
+    "name":"Valid nouns",
+    "path":"folders/1 - Text scene setup/Valid nouns.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

@@ -1,12 +1,12 @@
 {
   "$GMScript":"v1",
-  "%Name":"SceneParam",
+  "%Name":"scene_object",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"SceneParam",
+  "name":"scene_object",
   "parent":{
-    "name":"Structs",
-    "path":"folders/1 - Text scene setup/Structs.yy",
+    "name":"Valid nouns",
+    "path":"folders/1 - Text scene setup/Valid nouns.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

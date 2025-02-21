@@ -6,7 +6,7 @@ function ChatBox(width, height, font) constructor {
 	chat_height = height;
 	
 	user_colour[? "INFO"] = #9a9a9a;
-	user_colour[? "Narrator"] = #ede177;
+	user_colour[? "Narrator"] = #9a9a9a;
 	
 	static draw = function(xleft, ybot) {
 		var oldfont = draw_get_font();
@@ -34,6 +34,7 @@ function ChatBox(width, height, font) constructor {
 		
 		draw_set_valign(fa_top);
 		draw_set_font(oldfont);
+		draw_set_color(c_white);
 	}
 	
 	static send = function(from, text) {
@@ -47,4 +48,13 @@ function ChatBox(width, height, font) constructor {
         // Add message to the log
         ds_list_add(log, _message);
 	}
+}
+
+
+function scr_inform(_text) {
+	scr_chat("INFO", _text);
+}
+
+function scr_chat(_who,_text) {
+	global.chat.send(_who, _text);
 }
