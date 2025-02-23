@@ -2,14 +2,7 @@ function scr_setup_entity_as_npc(_entity) {
 	var manager = obj_ecs_manager.component_manager;
 	
 	var true_components = [
-		"not_ready_for_intimacy",
-		"neutral_opinion", 
-		"name_is_unknown", 
-		"not_intimating",
-		"out_of_reach",
-		"is_stranger", 
-		"is_standing",
-		"is_dressed",
+		"neutral_opinion",
 		"is_npc", 
 	];
 	for(var i = 0, count = array_length(true_components); i < count; i++)

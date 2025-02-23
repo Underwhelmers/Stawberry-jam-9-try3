@@ -29,10 +29,10 @@
   "physicsShapePoints":[],
   "physicsStartAwake":true,
   "properties":[
-    {"$GMObjectProperty":"v1","%Name":"node","filters":[],"listItems":[],"multiselect":false,"name":"node","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"{mytext: \"test\"}","varType":4,},
-    {"$GMObjectProperty":"v1","%Name":"clicked_x","filters":[],"listItems":[],"multiselect":false,"name":"clicked_x","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"SCREEN_W/2-64","varType":0,},
     {"$GMObjectProperty":"v1","%Name":"selected","filters":[],"listItems":[],"multiselect":false,"name":"selected","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"False","varType":3,},
+    {"$GMObjectProperty":"v1","%Name":"node","filters":[],"listItems":[],"multiselect":false,"name":"node","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"undefined","varType":4,},
     {"$GMObjectProperty":"v1","%Name":"node_depth","filters":[],"listItems":[],"multiselect":false,"name":"node_depth","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0","varType":0,},
+    {"$GMObjectProperty":"v1","%Name":"clicked_x","filters":[],"listItems":[],"multiselect":false,"name":"clicked_x","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0","varType":0,},
   ],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",

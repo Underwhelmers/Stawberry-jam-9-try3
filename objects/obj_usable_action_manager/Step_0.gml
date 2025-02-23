@@ -1,24 +1,24 @@
 if (updating) {
-	current_action_tree = new PhraseBuilderByStepsNode(function(_text, _args) {
-		_args.inst.callback();
-	});
+	updating = false;
 	
-	with (obj_usable_action) {
-		other.current_action_tree.add_leaf(string("-{0}-",text), { inst: id });
-	}
-	
-	//current_action_tree.compress();
 	instance_destroy(obj_usable_action_part);
+    var tree = scr_build_action_tree(pending_actions);
+    var root = instance_create_depth(SCREEN_W * 0.5, SCREEN_H * 0.5, 0, obj_usable_action_part, {
+        node: tree,
+    });
 	
-	var isnt = instance_create_depth(SCREEN_W/2, SCREEN_H/2,0,obj_usable_action_part, { 
-		node: current_action_tree
-	});
-	
-	if (current_action_tree.mytext == "") {
-		isnt.visible = false;
-		isnt.callback();
+    if (tree.mytext == "") { // First node might be empty
+		with (root) {
+			x = -100;
+			node_depth = -1;
+			visible = false;
+			scr_usable_action_part_callback();
+		}
 	}
 }
-		
-updating = require_update;
-require_update = false;
+
+if (require_update) {
+	updating = true;
+	require_update = false;
+    pending_actions = []; // Clear old actions
+}

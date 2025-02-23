@@ -28,7 +28,7 @@
   "properties":[
     {"$GMObjectProperty":"v1","%Name":"updating","filters":[],"listItems":[],"multiselect":false,"name":"updating","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"False","varType":3,},
     {"$GMObjectProperty":"v1","%Name":"require_update","filters":[],"listItems":[],"multiselect":false,"name":"require_update","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"True","varType":3,},
-    {"$GMObjectProperty":"v1","%Name":"current_action_tree","filters":[],"listItems":[],"multiselect":false,"name":"current_action_tree","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"undefined","varType":4,},
+    {"$GMObjectProperty":"v1","%Name":"pending_actions","filters":[],"listItems":[],"multiselect":false,"name":"pending_actions","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"","varType":6,},
   ],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
