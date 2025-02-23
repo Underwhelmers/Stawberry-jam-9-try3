@@ -17,7 +17,7 @@ function ChatBox(width, height, font) constructor {
 		for (var i = ds_list_size(log) - 1; i >= 0 && cursory > ybot - chat_height; i--) {
 			var _message = log[| i];
 			var message_type = _message[1];
-			var fulltext = string_ext("{1}: {0}", _message);
+			var fulltext = string_capitalize(string_ext("{1}: {0}", _message));
 			
 			// Calculate the height of the message text
 			var msg_height = string_height_ext(fulltext, -1, chat_width);
@@ -52,7 +52,12 @@ function ChatBox(width, height, font) constructor {
 
 
 function scr_inform(_text) {
-	scr_chat("INFO", _text);
+	var args = array_create(argument_count-1);
+	for (var i = 0, count = argument_count-1; i < count; i++) {
+		args[i] = argument[i+1];
+	}
+	
+	scr_chat("INFO", string_ext(_text, args));
 }
 
 function scr_chat(_who,_text) {
