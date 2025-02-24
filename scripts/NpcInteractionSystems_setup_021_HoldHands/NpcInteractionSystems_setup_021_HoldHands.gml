@@ -9,7 +9,7 @@ function NpcInteractionSystems_setup_021_HoldHands() {
                 npc.attraction += 5;
                 scr_chat(entity.name, "hold_hands_with_positive");
 				
-				StateComponents[$ "is_comfortable"].add_to(entity);
+				StateComponents.types[$ "is_comfortable"].add_to(entity);
             } else {
                 scr_chat(entity.name, "hold_hands_with_negative");
                 npc.interact(-5);

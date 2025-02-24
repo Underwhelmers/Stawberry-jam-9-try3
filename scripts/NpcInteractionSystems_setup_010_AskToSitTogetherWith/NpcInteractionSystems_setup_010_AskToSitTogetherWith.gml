@@ -6,7 +6,7 @@ function NpcInteractionSystems_setup_010_AskToSitTogetherWith() {
 			
             var npc = entity.relationship_with_pc;
             if (npc.check_trust(10)) {
-				StateComponents[$ "sitting_together"].add_to(entity);
+				StateComponents.types[$ "sitting_together"].add_to(entity);
                 scr_chat(entity.name, "ask_to_sit_together_with_positive");
             } else {
                 scr_chat(entity.name, "ask_to_sit_together_with_negative");

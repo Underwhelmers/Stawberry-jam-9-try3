@@ -6,7 +6,7 @@ function NpcInteractionSystems_setup_003_AskNameTo() {
 			// Effect: Name is revealed.
             entity.name = entity.truename;
 			entity.relationship_with_pc.interact(3);
-            StateComponents[$ "name_is_known"].add_to(entity);
+            StateComponents.types[$ "name_is_known"].add_to(entity);
 			
 			// Give feedback to player
             scr_chat(entity.name, "ask_name_to_response", entity.name);

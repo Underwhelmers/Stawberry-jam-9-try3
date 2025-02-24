@@ -13,8 +13,8 @@ function NpcInteractionSystems_setup_001_Greet() {
 			);
 			
 			
-			StateComponents[$ "in_conversation"].add_to(entity);
-			StateComponents[$ "already_introduced"].add_to(entity);
+			StateComponents.types[$ "in_conversation"].add_to(entity);
+			StateComponents.types[$ "already_introduced"].add_to(entity);
             entity.relationship_with_pc.interact(5);
         }
     );

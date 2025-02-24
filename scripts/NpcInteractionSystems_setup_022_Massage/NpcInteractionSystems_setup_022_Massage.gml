@@ -9,7 +9,7 @@ function NpcInteractionSystems_setup_022_Massage(){
                 npc.stimulation += 20; // Massage increases stimulation
                 npc.desire += 10; // And desire
 				
-				StateComponents[$ "is_aroused"].add_to(entity);
+				StateComponents.types[$ "is_aroused"].add_to(entity);
                 scr_chat(entity.name, "give_massage_to_positive");
             } else {
                 scr_chat(entity.name, "give_massage_to_negative");

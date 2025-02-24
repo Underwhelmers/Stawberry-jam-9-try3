@@ -6,7 +6,7 @@ function NpcInteractionSystems_setup_014_RemoveClothesFrom() {
             var manager = obj_ecs_manager.component_manager;
             var npc = entity.relationship_with_pc;
             if (npc.check_trust(50)) {
-				StateComponents[$ "is_naked"].add_to(entity);
+				StateComponents.types[$ "is_naked"].add_to(entity);
                 npc.attraction += 15;
                 npc.desire += 10; // Undressing increases desire
                 npc.interact(15);

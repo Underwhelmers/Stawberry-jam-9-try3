@@ -8,9 +8,9 @@ function NpcInteractionSystems_setup_032_AskToMoveSomewherePrivateTo() {
             // Conditions for moving to a private room
             if (npc.check_all(undefined, 50, 60, 60)) { // Requires moderate trust and desire
                 // Success: Move to private setting
-				StateComponents[$ "sitting_together"].remove_from(entity);
-				StateComponents[$ "in_conversation"].remove_from(entity);
-				StateComponents[$ "alone_with_pc"].add_to(entity);
+				StateComponents.types[$ "sitting_together"].remove_from(entity);
+				StateComponents.types[$ "in_conversation"].remove_from(entity);
+				StateComponents.types[$ "alone_with_pc"].add_to(entity);
 				
                 npc.trust += 10; // Privacy builds trust
                 npc.desire += 15; // Heightens anticipation

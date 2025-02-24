@@ -2,7 +2,7 @@ function ecs_setup_component_relationship_with_pc(manager, entity) {
 	manager.add_component(entity, "relationship_with_pc", {
 		owner: entity,
 		times_interacted: 0,
-		always_agee: true,
+		always_agee: false,
 		
 		interact: function(_delta_opinion = 0) {
 			times_interacted += 1;

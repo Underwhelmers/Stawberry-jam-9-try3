@@ -20,7 +20,7 @@ function NpcInteractionSystems_setup_026_PushInto() {
                 banging.intensity = min(banging.intensity + 15, 100);
                 scr_chat(entity.name, "push_into_" + banging.cavity + "_positive");
 				
-				StateComponents[$ "is_banging"].add_to(entity);
+				StateComponents.types[$ "is_banging"].add_to(entity);
             } else {
                 scr_chat(entity.name, "push_into_negative");
                 npc.interact(-10);

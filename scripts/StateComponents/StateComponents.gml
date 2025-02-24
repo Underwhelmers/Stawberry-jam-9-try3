@@ -33,29 +33,29 @@ function StateComponents(_name, _parent = undefined) constructor {
 	remove_from = default_remove;
 }
 
-function scr_setup_state_components() {
-	StateComponents.is_npc =  new StateComponents("is_npc");
-	StateComponents.is_object =  new StateComponents("is_object");
+function ecs_setup_state_components() {
+	StateComponents.types = {};
+	StateComponents.types.is_npc =  new StateComponents("is_npc");
+	StateComponents.types.is_object =  new StateComponents("is_object");
 	
-	StateComponents.on_the_floor =  new StateComponents("on_the_floor");
-	StateComponents.storable_in_backpack =  new StateComponents("storable_in_backpack");
+	StateComponents.types.on_the_floor =  new StateComponents("on_the_floor");
+	StateComponents.types.storable_in_backpack =  new StateComponents("storable_in_backpack");
 	
-	StateComponents.already_introduced =  new StateComponents("already_introduced");
-	StateComponents.name_is_known =  new StateComponents("name_is_known");
-	StateComponents.interested_sexualy =  new StateComponents("interested_sexualy");
+	StateComponents.types.already_introduced =  new StateComponents("already_introduced");
+	StateComponents.types.name_is_known =  new StateComponents("name_is_known");
+	StateComponents.types.interested_sexualy =  new StateComponents("interested_sexualy");
 	
-	StateComponents.reached_climax =  new StateComponents("reached_climax");
-	StateComponents.is_aroused =  new StateComponents("is_aroused");
-	StateComponents.is_naked =  new StateComponents("is_naked");
-	StateComponents.is_satisfied =  new StateComponents("is_satisfied");
-	StateComponents.is_comfortable =  new StateComponents("is_comfortable");
+	StateComponents.types.reached_climax =  new StateComponents("reached_climax");
+	StateComponents.types.is_aroused =  new StateComponents("is_aroused");
+	StateComponents.types.is_naked =  new StateComponents("is_naked");
+	StateComponents.types.is_satisfied =  new StateComponents("is_satisfied");
+	StateComponents.types.is_comfortable =  new StateComponents("is_comfortable");
 	
-	StateComponents.banging_state = ecs_setup_component_banging_state();
-	StateComponents.is_banging =  new StateComponents("is_banging", StateComponents.banging_state);
+	StateComponents.types.banging_state = ecs_setup_component_banging_state();
+	StateComponents.types.is_banging =  new StateComponents("is_banging", StateComponents.types.banging_state);
 	
-	StateComponents.out_of_reach =  new StateComponents("out_of_reach");
-	StateComponents.is_in_reach =  new StateComponents("is_in_reach");
-	StateComponents.in_conversation =  new StateComponents("in_conversation", StateComponents.is_in_reach);
-	StateComponents.sitting_together =  new StateComponents("sitting_together", StateComponents.is_in_reach);
-	
+	StateComponents.types.out_of_reach =  new StateComponents("out_of_reach");
+	StateComponents.types.is_in_reach =  new StateComponents("is_in_reach");
+	StateComponents.types.in_conversation =  new StateComponents("in_conversation", StateComponents.types.is_in_reach);
+	StateComponents.types.sitting_together =  new StateComponents("sitting_together", StateComponents.types.is_in_reach);
 }

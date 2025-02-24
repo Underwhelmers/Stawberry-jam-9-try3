@@ -6,7 +6,7 @@ function NpcInteractionSystems_setup_012_StartTouching(){
             var npc = entity.relationship_with_pc;
             if (npc.check_all(undefined, 40, 60)) {
                 npc.stimulation += 15; // Physical touch increases stimulation
-				StateComponents[$ "is_aroused"].add_to(entity);
+				StateComponents.types[$ "is_aroused"].add_to(entity);
 				
                 scr_chat(entity.name, "start_touching_positive");
             } else {

@@ -7,7 +7,7 @@ function NpcInteractionSystems_setup_015_Caress() {
             if (npc.check_attraction(80)) {
                 npc.attraction += 10;
                 npc.stimulation += 20; // Caressing significantly boosts stimulation
-				StateComponents[$ "is_aroused"].add_to(entity);
+				StateComponents.types[$ "is_aroused"].add_to(entity);
 				
                 scr_chat(entity.name, "give_caress_to_positive");
             } else {

@@ -1,7 +1,7 @@
 function scr_setup_entity_as_npc(_entity) {
 	var manager = obj_ecs_manager.component_manager;
 	
-	StateComponents.is_npc.add_to(_entity);
+	StateComponents.types[$ "is_npc"].add_to(_entity);
 	
 	manager.add_component(_entity, "truename", _entity.name);
 	manager.add_component(_entity, "name", "stranger");

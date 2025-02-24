@@ -5,7 +5,7 @@ function NpcInteractionSystems_setup_028_PullOut() {
         function(entity, args) {
             var npc = entity.relationship_with_pc;
             if (npc.check_trust(50)) {
-				StateComponents[$ "banging_state"].remove_from(entity);
+				StateComponents.types[$ "banging_state"].remove_from(entity);
 				
                 scr_chat(entity.name, "pull_out_positive");
             } else {

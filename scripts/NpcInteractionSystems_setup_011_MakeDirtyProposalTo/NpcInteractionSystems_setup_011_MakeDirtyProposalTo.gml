@@ -5,7 +5,7 @@ function NpcInteractionSystems_setup_011_MakeDirtyProposalTo() {
         function(entity, args) {
             var npc = entity.relationship_with_pc;
             if (npc.check_all(undefined, 20, 30)) {
-				StateComponents[$ "interested_sexualy"].add_to(entity);
+				StateComponents.types[$ "interested_sexualy"].add_to(entity);
                 npc.desire += 10; // Proposal heightens desire
                 scr_chat(entity.name, "make_dirty_proposal_to_positive");
             } else {

@@ -8,8 +8,8 @@ function NpcInteractionSystems_setup_017_Cuddle(){
             npc.trust += 20;
             npc.interact(10);
 			
-			StateComponents[$ "reached_climax"].remove_from(entity);
-			StateComponents[$ "is_satisfied"].add_to(entity);
+			StateComponents.types[$ "reached_climax"].remove_from(entity);
+			StateComponents.types[$ "is_satisfied"].add_to(entity);
         }
     );
 	

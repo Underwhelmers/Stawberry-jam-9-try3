@@ -12,8 +12,8 @@ function NpcInteractionSystems_setup_025_FinishTogether() {
                     scr_chat(entity.name, "finish_together_outside");
                 }
 				
-				StateComponents[$ "is_banging"].remove_from(entity);
-				StateComponents[$ "reached_climax"].add_to(entity);
+				StateComponents.types[$ "is_banging"].remove_from(entity);
+				StateComponents.types[$ "reached_climax"].add_to(entity);
 				
                 npc.attraction = 30;
                 npc.desire = 20;
