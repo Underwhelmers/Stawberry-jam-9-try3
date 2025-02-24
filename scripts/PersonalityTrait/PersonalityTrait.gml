@@ -144,5 +144,119 @@ function scr_setup_personality_traits() {
     });
 	
 	
+	// Greedy (Loves gifts, hoard-focused)
+    PersonalityTrait.Greedy = new PersonalityTrait("greedy");
+    PersonalityTrait.Greedy.add_modifier("give gift to", "override", function(entity, args) {
+        var npc = entity.relationship_with_pc;
+        if (random(100) < 85) { // Higher success chance
+            npc.trust += 10; // Bigger trust boost
+			npc.atraction += 3;
+			npc.desire += 3;
+			npc.stimulation += 2;
+            npc.interact(20);
+            args.final_chat = "Shiny! Mine now!";
+        } else {
+            npc.interact(5);
+            args.final_chat = "Is that all?";
+        }
+        scr_chat(entity.name, args.final_chat);
+    });
+    PersonalityTrait.Greedy.add_modifier("make dirty proposal to", "extend", function(entity, args) {
+        entity.relationship_with_pc.desire += 5;
+        scr_chat(entity.name, "What's in it for my hoard?");
+    });
+    PersonalityTrait.Greedy.add_modifier("on_interaction", "extend", function(entity, args) {
+        if (random(100) < 20) {
+            scr_chat(entity.name, "Gots anything shiny for me?");
+        }
+    });
+	
+	PersonalityTrait.Skittish = new PersonalityTrait("skittish");
+    PersonalityTrait.Skittish.add_modifier("greet", "override", function(entity, args) {
+        entity.relationship_with_pc.trust -= 5; // Wary of new faces
+        args.final_chat = "Who's this?!";
+        scr_chat(entity.name, args.final_chat);
+    });
+    PersonalityTrait.Skittish.add_modifier("pull closer", "override", function(entity, args) {
+        var npc = entity.relationship_with_pc;
+        if (npc.check_trust(60)) {
+            npc.attraction += 5;
+            npc.stimulation += 10;
+            args.final_chat = "Hey... Slowly now...";
+            scr_chat(entity.name, args.final_chat);
+        } else {
+            npc.trust -= 10;
+            args.final_chat = "Too close-back off!";
+            scr_chat(entity.name, args.final_chat);
+        }
+    });
+    PersonalityTrait.Skittish.add_modifier("on_interaction", "extend", function(entity, args) {
+        if (random(100) < 25 && entity.relationship_with_pc.trust < 20) {
+            scr_chat(entity.name, "Don't sneak up!");
+            entity.relationship_with_pc.trust -= 3;
+        }
+    });
+	
+	PersonalityTrait.Mischievous = new PersonalityTrait("mischievous");
+    PersonalityTrait.Mischievous.add_modifier("tease", "extend", function(entity, args) {
+        entity.relationship_with_pc.attraction += 10;
+        args.final_chat = "Sneaky, huh? I'll getcha back!";
+        scr_chat(entity.name, args.final_chat);
+    });
+    PersonalityTrait.Mischievous.add_modifier("give kiss to", "override", function(entity, args) {
+        var npc = entity.relationship_with_pc;
+        if (npc.check_attraction(70)) {
+            npc.attraction += 15;
+            npc.stimulation += 15;
+            args.final_chat = "Surprise peck!";
+            scr_chat(entity.name, args.final_chat);
+        } else {
+            npc.attraction += 5;
+            args.final_chat = "Too slow friend!";
+            scr_chat(entity.name, args.final_chat);
+        }
+    });
+    PersonalityTrait.Mischievous.add_modifier("on_interaction", "extend", function(entity, args) {
+        if (random(100) < 10) {
+            scr_chat(entity.name, "Watch your hoard! *pinches your ass*");
+            entity.relationship_with_pc.desire += 3;
+        }
+    });
+
+	PersonalityTrait.Lustful = new PersonalityTrait("lustful");
+    PersonalityTrait.Lustful.add_modifier("make dirty proposal to", "override", function(entity, args) {
+        var npc = entity.relationship_with_pc;
+        if (npc.check_all(undefined, 10, 20)) { // Lowered thresholds for eagerness
+            ecs_change_state_with_comps(entity, [], ["npc_is_ready_for_intimacy"]);
+            npc.desire += 15; // Strong desire boost
+            args.final_chat = "Oh, yes-let’s do it now!";
+            scr_chat(entity.name, args.final_chat);
+        } else {
+            args.final_chat = "Hmm, tempting... convince me.";
+            scr_chat(entity.name, args.final_chat);
+        }
+    });
+    PersonalityTrait.Lustful.add_modifier("start touching", "extend", function(entity, args) {
+        entity.relationship_with_pc.stimulation += 20; // Heightened sensitivity
+        entity.relationship_with_pc.desire += 10; // Extra eagerness
+        scr_chat(entity.name, "Don't stop just there, what a tease.");
+    });
+    PersonalityTrait.Lustful.add_modifier("give kiss to", "extend", function(entity, args) {
+        entity.relationship_with_pc.attraction += 5;
+        entity.relationship_with_pc.stimulation += 15; // Passionate response
+        scr_chat(entity.name, "More... I need more!");
+    });
+    PersonalityTrait.Lustful.add_modifier("thrust", "extend", function(entity, args) {
+        entity.relationship_with_pc.stimulation += 10; // Extra intensity
+        entity.relationship_with_pc.desire += 5;
+        scr_chat(entity.name, "Yes, harder-please!");
+    });
+    PersonalityTrait.Lustful.add_modifier("on_interaction", "extend", function(entity, args) {
+        if (random(100) < 5) {
+            scr_chat(entity.name, "Do you ever think in people arround you just naked?");
+            entity.relationship_with_pc.desire += 5;
+        }
+    });
+	
 	PersonalityTrait.all_instances_vb = new ValueBag(PersonalityTrait.all_instances);
 }

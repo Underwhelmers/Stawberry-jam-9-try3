@@ -2,6 +2,7 @@ function ecs_setup_component_relationship_with_pc(manager, entity) {
 	manager.add_component(entity, "relationship_with_pc", {
 		owner: entity,
 		times_interacted: 0,
+		always_agee: true,
 		
 		interact: function(_delta_opinion = 0) {
 			times_interacted += 1;
@@ -24,40 +25,40 @@ function ecs_setup_component_relationship_with_pc(manager, entity) {
 		
 		opinion: 0, // 100 best, -100 worst.
 		check_opinion: function(threshold) { 
-			if (opinion < threshold)
+			if (opinion < threshold && !always_agee)
 				scr_inform("Not enough opinion.");
-			return opinion >= threshold;
+			return opinion >= threshold || always_agee;
 		},
 		
 		attraction: 0, // 100 best, -100 worst.
 		check_attraction: function(threshold) { 
-			if (attraction < threshold)
+			if (attraction < threshold && !always_agee)
 				scr_inform("Not enough attraction.");
-			return attraction >= threshold;
+			return attraction >= threshold || always_agee;
 		},
 		
 		
 		trust: 0,  // 100 best, -100 worst.
 		check_trust: function(threshold) { 
-			if (trust < threshold)
+			if (trust < threshold && !always_agee)
 				scr_inform("Not enough trust.");
-			return trust >= threshold;
+			return trust >= threshold || always_agee;
 		},
 		
 		
 		desire: 0,
 		check_desire: function(threshold) { 
-			if (desire < threshold)
+			if (desire < threshold && !always_agee)
 				scr_inform("Not enough desire.");
-			return desire >= threshold;
+			return desire >= threshold || always_agee;
 		},
 		
 		
 		stimulation: 0,
 		check_stimulation: function(threshold) { 
-			if (stimulation < threshold)
+			if (stimulation < threshold && !always_agee)
 				scr_inform("Not enough stimulation.");
-			return stimulation >= threshold;
+			return stimulation >= threshold || always_agee;
 		},
 		
 		check_all: function(_opinion = undefined, _trust = undefined, _attraction = undefined, _desire = undefined, _stimulation = undefined) {
