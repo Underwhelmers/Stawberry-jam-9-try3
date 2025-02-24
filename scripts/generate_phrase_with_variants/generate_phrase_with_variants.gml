@@ -27,14 +27,29 @@ function generate_phrase_with_variants(_string) {
 				var _word = global.word_variants[? _pref_word[1]].get();
 				var _progress = generate_phrase_with_variants(_word);
 				
-				parts[i] = global.language_rules.place_indefinite_article(_progress);
+				parts[i] = global.language_rules.place_article(_progress);
 			}
 				
 			
+			if (_pref_word[1] == "s") {
+				parts[i] = global.language_rules.make_plural(
+					generate_phrase_with_variants(
+						global.word_variants[? _pref_word[0]].get()
+					)
+				);
+			} else if (_pref_word[1] == "st" || _pref_word[1] == "est") {
+				parts[i] = global.language_rules.make_superlative(
+					generate_phrase_with_variants(
+						global.word_variants[? _pref_word[0]].get()
+					)
+				);
+			}
+			
 			switch(_pref_word[1]) {
 				case "s":
-					parts[i] = global.language_rules.pluralize_word(generate_phrase_with_variants(global.word_variants[? _pref_word[0]].get()));
+					
 					break;
+				case "st": 
 			}
         }
 		

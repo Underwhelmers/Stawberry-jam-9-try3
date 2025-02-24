@@ -61,5 +61,13 @@ function scr_inform(_text) {
 }
 
 function scr_chat(_who,_text) {
-	global.chat.send(_who, _text);
+	var args = array_create(argument_count-2);
+	for (var i = 0, count = argument_count-2; i < count; i++) {
+		args[i] = argument[i+2];
+	}
+	
+	global.chat.send(_who, string_ext(
+		generate_phrase_with_variants(_text),
+		args
+	));
 }

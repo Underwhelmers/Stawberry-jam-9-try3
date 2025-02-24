@@ -1,18 +1,22 @@
 function NpcInteractionSystems_setup_015_Caress() {
 	NpcInteractionSystems.Caress = ecs_setup_system_player_npc_interaction(
-        "give caress to", 
-        ["npc_is_ready_for_intimacy", "relationship_with_pc", "traits"], 
+        "stroke gently {name}", 
+        ["interested_sexualy", "relationship_with_pc", "traits"], 
         function(entity, args) {
             var npc = entity.relationship_with_pc;
             if (npc.check_attraction(80)) {
                 npc.attraction += 10;
                 npc.stimulation += 20; // Caressing significantly boosts stimulation
-                ecs_change_state_with_comps(entity, ["not_intimating"], ["is_aroused"]);
-                scr_chat(entity.name, global.chat_texts[? "give_caress_to_positive"]);
+				StateComponents[$ "is_aroused"].add_to(entity);
+				
+                scr_chat(entity.name, "give_caress_to_positive");
             } else {
                 npc.attraction += 5;
-                scr_chat(entity.name, global.chat_texts[? "give_caress_to_negative"]);
+                scr_chat(entity.name, "give_caress_to_negative");
             }
         }
     );
+	
+    new_word_variant("give_caress_to_positive", ["That feels so good...", "Oh, |mmm|, yes...", "So |nice| to feel..."]);
+    new_word_variant("give_caress_to_negative", ["Hey, slow down a bit.", "Not so fast, okay?", "Ease up please."]);
 }

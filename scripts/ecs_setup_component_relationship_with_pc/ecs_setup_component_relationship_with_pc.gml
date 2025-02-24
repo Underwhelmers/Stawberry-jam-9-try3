@@ -7,20 +7,6 @@ function ecs_setup_component_relationship_with_pc(manager, entity) {
 		interact: function(_delta_opinion = 0) {
 			times_interacted += 1;
 			opinion += _delta_opinion;
-			
-			if (opinion < -100) {
-				ecs_change_state_with_comps(owner, ["neutral_opinion", "good_opinion", "is_in_love"],["are_enemies", "bad_opinion"]);
-			} else if (opinion < -40) {
-				ecs_change_state_with_comps(owner, ["are_enemies", "neutral_opinion", "good_opinion", "is_in_love"],["bad_opinion"]);
-			} else if (opinion > 40) {
-				ecs_change_state_with_comps(owner, ["are_enemies", "bad_opinion", "neutral_opinion", "is_in_love"],["good_opinion"]);
-			} else if (opinion > 100) {
-				ecs_change_state_with_comps(owner, ["are_enemies", "bad_opinion", "neutral_opinion"],["is_in_love", "good_opinion"]);
-			} else {
-				ecs_change_state_with_comps(owner, ["are_enemies", "bad_opinion", "good_opinion", "is_in_love"],["neutral_opinion"]);
-			}
-		
-			//scr_inform(string("opinion: {0}\n          attraction: {1}\n          thrust: {2}", opinion, attraction, trust));
 		},
 		
 		opinion: 0, // 100 best, -100 worst.

@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"NpcInteractionSystems_setup_029_AlignToRear",
+  "%Name":"NpcInteractionSystems_setup_030_AlignToRear",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"NpcInteractionSystems_setup_029_AlignToRear",
+  "name":"NpcInteractionSystems_setup_030_AlignToRear",
   "parent":{
     "name":"NPC Interactions",
     "path":"folders/1 - Interaction symulation ECS/ECS/Systems/NPC Interactions.yy",

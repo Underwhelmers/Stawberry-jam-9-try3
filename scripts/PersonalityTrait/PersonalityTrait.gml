@@ -55,10 +55,10 @@ function scr_setup_personality_traits() {
     PersonalityTrait.Bold.add_modifier(NpcInteractionSystems.MakeDirtyProposalTo.system_event, 
 	"override", function(entity, args) {
         if (entity.relationship_with_pc.check_attraction(20)) {
-            obj_ecs_manager.component_manager.add_component(entity, "npc_is_ready_for_intimacy", true);
+            obj_ecs_manager.component_manager.add_component(entity, "interested_sexualy", true);
             scr_chat(entity.name, "Let's not waste time, yes!");
         } else {
-            scr_chat(entity.name, "Prove you’re worth it first.");
+            scr_chat(entity.name, "Prove you're worth it first.");
         }
     });
     PersonalityTrait.Bold.add_modifier(NpcInteractionSystems.Thrust.system_event, 
@@ -227,9 +227,9 @@ function scr_setup_personality_traits() {
     PersonalityTrait.Lustful.add_modifier("make dirty proposal to", "override", function(entity, args) {
         var npc = entity.relationship_with_pc;
         if (npc.check_all(undefined, 10, 20)) { // Lowered thresholds for eagerness
-            ecs_change_state_with_comps(entity, [], ["npc_is_ready_for_intimacy"]);
+            ecs_change_state_with_comps(entity, [], ["interested_sexualy"]);
             npc.desire += 15; // Strong desire boost
-            args.final_chat = "Oh, yes-let’s do it now!";
+            args.final_chat = "Oh, yes-let's do it now!";
             scr_chat(entity.name, args.final_chat);
         } else {
             args.final_chat = "Hmm, tempting... convince me.";

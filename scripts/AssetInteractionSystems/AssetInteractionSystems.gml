@@ -4,7 +4,7 @@ function AssetInteractionSystems() constructor {
 
 
 function scr_setup_player_actions_with_assets() {
-	AssetInteractionSystems.Take = ecs_setup_system_player_action("take", ["on_the_floor","is_in_reach","storable_in_backpack"], function(entity) {
+	AssetInteractionSystems.Take = ecs_setup_system_player_action("take {name}", ["on_the_floor","is_in_reach","storable_in_backpack"], function(entity) {
 		var manager = obj_ecs_manager.component_manager;
 		ecs_change_state_with_comps(entity,
 			["on_the_floor", "is_in_reach"],
@@ -12,7 +12,7 @@ function scr_setup_player_actions_with_assets() {
 		);
 	});
 	
-	AssetInteractionSystems.Drop = ecs_setup_system_player_action("drop", ["on_inventory"], function(entity) {
+	AssetInteractionSystems.Drop = ecs_setup_system_player_action("drop {name}", ["on_inventory"], function(entity) {
 		var manager = obj_ecs_manager.component_manager;
 		ecs_change_state_with_comps(entity,
 			["on_inventory"],
@@ -20,7 +20,7 @@ function scr_setup_player_actions_with_assets() {
 		);
 	});
 	
-	AssetInteractionSystems.Throw = ecs_setup_system_player_action("throw", ["on_inventory"], function(entity) {
+	AssetInteractionSystems.Throw = ecs_setup_system_player_action("throw {name}", ["on_inventory"], function(entity) {
 		var manager = obj_ecs_manager.component_manager;
 		if (manager.has_component(entity,"fragile")) {
 			if(success(entity.fragile.break_chance)) {

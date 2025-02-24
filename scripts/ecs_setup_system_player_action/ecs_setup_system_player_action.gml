@@ -1,5 +1,5 @@
 function ecs_setup_system_player_action(_action_verb, _requirements, _effect) {
-    var action_attr = string_replace_all(_action_verb, " ", "_");
+    var action_attr = string_replace_all(string_replace_all(_action_verb," {name}",""), " ", "_");
     var inst = new ECS_SystemInstance(["player_used_" + action_attr], {
         real_effect: _effect,
         action_attr: action_attr,
@@ -23,7 +23,7 @@ function ecs_setup_system_player_action(_action_verb, _requirements, _effect) {
         array_push(obj_usable_action_manager.pending_actions, {
             entity: entity,
             action_attr: args.action_attr,
-            text: string("{0} {1}", args.action_verb, entity.name)
+            text: string_replace_all(args.action_verb, "{name}", entity.name)
         });
     };
 

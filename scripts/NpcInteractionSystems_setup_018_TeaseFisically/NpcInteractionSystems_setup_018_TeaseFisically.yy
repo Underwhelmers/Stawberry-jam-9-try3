@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"NpcInteractionSystems_setup_018_Tease",
+  "%Name":"NpcInteractionSystems_setup_018_TeaseFisically",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"NpcInteractionSystems_setup_018_Tease",
+  "name":"NpcInteractionSystems_setup_018_TeaseFisically",
   "parent":{
     "name":"NPC Interactions",
     "path":"folders/1 - Interaction symulation ECS/ECS/Systems/NPC Interactions.yy",

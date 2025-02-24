@@ -1,5 +1,7 @@
-function NpcInteractionSystems() constructor {	
+function NpcInteractionSystems() constructor {
+	
 }
+
 function ecs_setup_system_player_npc_interaction(_verb, _reqs, _effect) {
 	var inst = ecs_setup_system_player_action(_verb, _reqs,
 		function(entity, args) {
@@ -33,7 +35,7 @@ function scr_setup_player_actions_with_npcs() {
     NpcInteractionSystems_setup_015_Caress();
     NpcInteractionSystems_setup_016_Thrust();
     NpcInteractionSystems_setup_017_Cuddle();
-    NpcInteractionSystems_setup_018_Tease();
+    NpcInteractionSystems_setup_018_TeaseFisically();
 	NpcInteractionSystems_setup_019_Compliment();
 	NpcInteractionSystems_setup_020_Whisper();
 	NpcInteractionSystems_setup_021_HoldHands();
@@ -46,4 +48,9 @@ function scr_setup_player_actions_with_npcs() {
     NpcInteractionSystems_setup_026_PushInto();
     NpcInteractionSystems_setup_027_PushOutOf();
     NpcInteractionSystems_setup_028_PullOut();
+	
+    NpcInteractionSystems_setup_029_AlignToFront();
+    NpcInteractionSystems_setup_030_AlignToRear();
+    NpcInteractionSystems_setup_031_StartBangingWith();
+    NpcInteractionSystems_setup_032_AskToMoveSomewherePrivateTo();
 }

@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"NpcInteractionSystems_setup_030_AskToMoveSomewhereMorePrivateTo",
+  "%Name":"NpcInteractionSystems_setup_033_UndressSlowly",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"NpcInteractionSystems_setup_030_AskToMoveSomewhereMorePrivateTo",
+  "name":"NpcInteractionSystems_setup_033_UndressSlowly",
   "parent":{
     "name":"NPC Interactions",
     "path":"folders/1 - Interaction symulation ECS/ECS/Systems/NPC Interactions.yy",

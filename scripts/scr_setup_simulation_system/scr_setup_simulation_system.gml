@@ -19,19 +19,19 @@ function scr_setup_simulation_system() {
                     scr_chat(entity.name, "Come closer, I need you now...");
                     manager.add_component(entity, "is_aroused", true);
                 } else {
-                    scr_chat(entity.name, "Let’s get these off...");
+                    scr_chat(entity.name, "Let's get these off...");
                     manager.add_component(entity, "is_naked", true);
                 }
             } else if (npc.opinion < -20) {
                 // NPC leaves if upset
-                scr_chat(entity.name, "I’m done here.");
+                scr_chat(entity.name, "I'm done here.");
                 ecs_change_state_with_comps(entity, 
-					["is_in_reach","in_conversation","sitting_together","is_naked","npc_is_ready_for_intimacy"], 
+					["is_in_reach","in_conversation","sitting_together","is_naked","interested_sexualy"], 
 					["out_of_reach","is_standing"]
 				);
             } else if (npc.attraction > 40 && npc.trust > 30) {
                 // NPC flirts back
-                scr_chat(entity.name, "You’re kinda cute, you know?");
+                scr_chat(entity.name, "You're kinda cute, you know?");
                 npc.attraction += 5;
                 npc.interact(5);
             } else {
