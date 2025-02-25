@@ -3,8 +3,9 @@ function scr_setup_all_actions(){
     var A = global.action_map;
     
     A[? "look"         ] = action_look;
+	/*
     A[? "move to"      ] = action_move_to;
-    A[? "touch"        ] = action_touch; /*
+    A[? "touch"        ] = action_touch;
     A[? "look at"      ] = action_look_at;
     A[? "talk to"      ] = action_talk_to;
     A[? "flirt with"   ] = action_flirt_with;
@@ -36,7 +37,7 @@ function scr_setup_all_actions(){
     A[? "dress"        ] = action_dress;
     A[? "climax"       ] = action_climax;
     A[? "edge"         ] = action_climax;
-    A[? "aim at"       ] = action_aim_at;
+    A[? "aim"          ] = action_aim_at;
     A[? "restrain"     ] = action_restrain;
     A[? "release"      ] = action_release;
     A[? "spank"        ] = action_spank;
@@ -44,7 +45,6 @@ function scr_setup_all_actions(){
     A[? "check"        ] = action_check;
     A[? "free"         ] = action_free;
 	-- */
-	
 	//scr_setup_action_examine();
 	//scr_setup_action_look_around();
 }

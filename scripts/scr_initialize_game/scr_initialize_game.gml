@@ -32,6 +32,9 @@ function scr_initialize_game() {
 	// Create a character
     var character = {
         name: "Sylva",
+		eye_color: choose("blue_eyes", "green_eyes", "brown_eyes"),
+		mood: choose("calm_mood", "nervous_mood", "cheerful_mood"),
+		
         arousal: 0,
         body: {
             hands: { free: true },
