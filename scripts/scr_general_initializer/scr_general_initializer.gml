@@ -10,7 +10,6 @@ function scr_general_initializer() {
 	global.camera.set_position(0,0);
 
 	scr_setup_word_variants();
-	dialog_setup_general();
 	
 	global.chat = new ChatBox(SCREEN_W/2,SCREEN_H, fnt_chat_msg);
 	new_instance(obj_ecs_manager);
