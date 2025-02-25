@@ -6,7 +6,7 @@
   "name":"NpcInteractionSystems_setup_029_AlignToFront",
   "parent":{
     "name":"NPC Interactions",
-    "path":"folders/1 - Interaction symulation ECS/ECS/Systems/NPC Interactions.yy",
+    "path":"folders/1 - Text scene setup/ECS/Systems/NPC Interactions.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

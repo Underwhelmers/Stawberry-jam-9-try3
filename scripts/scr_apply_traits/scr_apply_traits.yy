@@ -6,7 +6,7 @@
   "name":"scr_apply_traits",
   "parent":{
     "name":"NPC Traits",
-    "path":"folders/1 - Interaction symulation ECS/NPC Traits.yy",
+    "path":"folders/1 - Text scene setup/NPC Traits.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

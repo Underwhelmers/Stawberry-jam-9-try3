@@ -53,4 +53,6 @@ function scr_setup_player_actions_with_npcs() {
     NpcInteractionSystems_setup_030_AlignToRear();
     NpcInteractionSystems_setup_031_StartBangingWith();
     NpcInteractionSystems_setup_032_AskToMoveSomewherePrivateTo();
+    NpcInteractionSystems_setup_033_TeaseWithWords();
+    NpcInteractionSystems_setup_034_UndressSlowly();
 }

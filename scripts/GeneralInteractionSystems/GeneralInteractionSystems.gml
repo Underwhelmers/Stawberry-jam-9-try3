@@ -7,17 +7,11 @@ function scr_setup_general_interaction_systems() {
 		var manager = obj_ecs_manager.component_manager;
 		if (args.old_entity) {
 			scr_inform("You left '{0}' behind.", args.old_entity.name);
-			ecs_change_state_with_comps(args.old_entity,
-				["is_in_reach", "in_conversation","sitting_together","interested_sexualy","is_naked","making_love"],
-				[]
-			);
+			StateComponents.types.is_in_reach.remove_from(args.old_entity);
 		}
 		
 		scr_inform("Approached to {0}", entity.name);
-		ecs_change_state_with_comps(entity,
-			[],
-			["is_in_reach"]
-		);
+		StateComponents.types.is_in_reach.add_to(entity);
 		args.old_entity = entity;
 	});
 	GeneralInteractionSystems.Approach.execute_args.old_entity = undefined;

@@ -1,3 +1,9 @@
+if (!generate_player_actions) {
+	exit;
+}
+
+
+
 if (updating) {
 	updating = false;
 	
@@ -22,3 +28,4 @@ if (require_update) {
 	require_update = false;
     pending_actions = []; // Clear old actions
 }
+

@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"scr_setup_simulation_system",
   "parent":{
-    "name":"Systems",
-    "path":"folders/1 - Interaction symulation ECS/ECS/Systems.yy",
+    "name":"NPC Actions",
+    "path":"folders/1 - Text scene setup/ECS/Systems/NPC Actions.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

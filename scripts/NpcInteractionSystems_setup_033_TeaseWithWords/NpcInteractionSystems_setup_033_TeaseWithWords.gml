@@ -4,7 +4,7 @@ function NpcInteractionSystems_setup_033_TeaseWithWords() {
         ["already_introduced", "in_conversation", "relationship_with_pc", "traits"],
         function(entity, args) {
             var npc = entity.relationship_with_pc;
-            if (npc.check_attraction(30)) {
+            if (npc.check_attraction(20)) {
                 npc.attraction += 10;
                 npc.desire += 5;
                 npc.interact(5);
@@ -17,13 +17,13 @@ function NpcInteractionSystems_setup_033_TeaseWithWords() {
     );
     
     new_word_variant("tease_with_words_positive", [
-        "Oh, you’re |good| at this!",
+        "Oh, you're |good| at this!",
         "|Yes|, keep talking like that!",
-        "That’s |nice|, you tease!"
+        "That's |nice|, you tease!"
     ]);
     new_word_variant("tease_with_words_negative", [
         "Not funny, stop it.",
-        "|No|, that’s too much.",
+        "|No|, that's too much.",
         "Cut it out, |please|."
     ]);
 }

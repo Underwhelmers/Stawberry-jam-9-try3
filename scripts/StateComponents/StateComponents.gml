@@ -50,6 +50,7 @@ function ecs_setup_state_components() {
 	StateComponents.types.is_naked =  new StateComponents("is_naked");
 	StateComponents.types.is_satisfied =  new StateComponents("is_satisfied");
 	StateComponents.types.is_comfortable =  new StateComponents("is_comfortable");
+	StateComponents.types.waiting_player_response = new StateComponents("waiting_player_response");
 	
 	StateComponents.types.banging_state = ecs_setup_component_banging_state();
 	StateComponents.types.is_banging =  new StateComponents("is_banging", StateComponents.types.banging_state);
@@ -58,4 +59,5 @@ function ecs_setup_state_components() {
 	StateComponents.types.is_in_reach =  new StateComponents("is_in_reach");
 	StateComponents.types.in_conversation =  new StateComponents("in_conversation", StateComponents.types.is_in_reach);
 	StateComponents.types.sitting_together =  new StateComponents("sitting_together", StateComponents.types.is_in_reach);
+	StateComponents.types.alone_with_pc = new StateComponents("alone_with_pc", StateComponents.types.is_in_reach);
 }

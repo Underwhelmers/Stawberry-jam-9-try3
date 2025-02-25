@@ -1,66 +1,37 @@
 function scr_setup_simulation_system() {
-    var sim_system1 = new ECS_SystemInstance(
-        ["is_npc", "relationship_with_pc", "is_in_reach"], // Required components
-        { tick_rate: 60, cooldown: 60 } // Executes every 60 steps (~1 sec at 60 FPS)
+	ECS_SystemInstance.npc_initiative = new ECS_SystemInstance(
+        ["is_npc", "relationship_with_pc", "traits", "!waiting_player_response",],
+        { tick_rate: 60, cooldown: 60 }
     );
-    sim_system1.execute_logic = function(entity, args) {
-        // Random chance to act each tick
-		args.cooldown--;
-		
-        if (random(500) < 20 && args.cooldown == -1) { // 20% chance, throttled by alarm
-	        var npc = entity.relationship_with_pc;
-	        var manager = obj_ecs_manager.component_manager;
+    
+    ECS_SystemInstance.npc_initiative.execute_logic = function(entity, args) {
+        var npc = entity.relationship_with_pc;
+        
+        if (random(100) < 20 && args.cooldown-- < 0) {
+            args.cooldown = args.tick_rate;
+			var alone_with_pc = StateComponents.types.alone_with_pc.exists_on(entity);
+			var is_banging = StateComponents.types.is_banging.exists_on(entity);
 			
-            args.cooldown = args.tick_rate; // Reset timer
-            
-            if (npc.attraction > 80 && manager.has_component(entity, "they_are_yours")) {
-                // NPC initiates intimacy
-                if (manager.has_component(entity, "is_naked")) {
-                    scr_chat(entity.name, "Come closer, I need you now...");
-                    manager.add_component(entity, "is_aroused", true);
-                } else {
-                    scr_chat(entity.name, "Let's get these off...");
-                    manager.add_component(entity, "is_naked", true);
-                }
-            } else if (npc.opinion < -20) {
-                // NPC leaves if upset
-                scr_chat(entity.name, "I'm done here.");
-                ecs_change_state_with_comps(entity, 
-					["is_in_reach","in_conversation","sitting_together","is_naked","interested_sexualy"], 
-					["out_of_reach","is_standing"]
-				);
-            } else if (npc.attraction > 40 && npc.trust > 30) {
-                // NPC flirts back
-                scr_chat(entity.name, "You're kinda cute, you know?");
-                npc.attraction += 5;
-                npc.interact(5);
-            } else {
-                // Neutral idle behavior
-                scr_chat(entity.name, "Just chilling here...");
+			
+            if (npc.desire > 60 && ecs_entity_fulfills(entity, ["alone_with_pc","is_banging"]) && success(0.125)) {
+                scr_npc_initiate_intimacy(entity); // Example NPC action
+            } else if (npc.attraction > 50 && success(0.125)) {
+				scr_npc_flirt(entity);
             }
         }
     };
-    obj_ecs_manager.system_manager.register_system(sim_system1);
-	/*
-	var sim_system2 = new ECS_SystemInstance(
-        ["is_npc", "relationship_with_pc", "out_of_reach"], // Required components
-        { tick_rate: 60, cooldown: 60 } // Executes every 60 steps (~1 sec at 60 FPS)
-    );
-    sim_system2.execute_logic = function(entity, args) {
-        // Random chance to act each tick
-		args.cooldown--;
-		
-        if (random(500) < 20 && args.cooldown == -1) { // 20% chance, throttled by alarm
-	        var npc = entity.relationship_with_pc;
-	        var manager = obj_ecs_manager.component_manager;
-			
-            args.cooldown = args.tick_rate; // Reset timer
-            
-			
-        }
-    };
     
+    obj_ecs_manager.system_manager.register_system(ECS_SystemInstance.npc_initiative);
+	
+	new_word_variant("npc_flirt_positive", [
+        "|Yes|, you're looking |good| today!",
+        "Oh, I can't stop |wanting| you!",
+        "|Mmm|, come closer, |please|!"
+    ]);
     
-	obj_ecs_manager.system_manager.register_system(sim_system2);
-	*/
+    new_word_variant("npc_initiate_intimacy_positive", [
+        "|Mmm|, I'm |pushing| against you |now|!",
+        "Oh, |yes|, let's get |tight|!",
+        "|Want| you inside me |now|!"
+    ]);
 }

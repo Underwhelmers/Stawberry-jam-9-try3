@@ -12,7 +12,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"Objects",
-    "path":"folders/1 - Interaction symulation ECS/Objects.yy",
+    "path":"folders/1 - Text scene setup/Objects.yy",
   },
   "parentObjectId":null,
   "persistent":false,

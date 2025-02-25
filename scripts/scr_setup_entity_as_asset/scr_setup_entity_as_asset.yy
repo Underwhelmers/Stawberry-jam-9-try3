@@ -6,7 +6,7 @@
   "name":"scr_setup_entity_as_asset",
   "parent":{
     "name":"Components",
-    "path":"folders/1 - Interaction symulation ECS/ECS/Components.yy",
+    "path":"folders/1 - Text scene setup/ECS/Components.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

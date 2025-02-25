@@ -9,7 +9,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"Objects",
-    "path":"folders/1 - Interaction symulation ECS/Objects.yy",
+    "path":"folders/1 - Text scene setup/Objects.yy",
   },
   "parentObjectId":null,
   "persistent":false,
@@ -29,6 +29,7 @@
     {"$GMObjectProperty":"v1","%Name":"updating","filters":[],"listItems":[],"multiselect":false,"name":"updating","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"False","varType":3,},
     {"$GMObjectProperty":"v1","%Name":"require_update","filters":[],"listItems":[],"multiselect":false,"name":"require_update","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"True","varType":3,},
     {"$GMObjectProperty":"v1","%Name":"pending_actions","filters":[],"listItems":[],"multiselect":false,"name":"pending_actions","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"","varType":6,},
+    {"$GMObjectProperty":"v1","%Name":"generate_player_actions","filters":[],"listItems":[],"multiselect":false,"name":"generate_player_actions","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"true","varType":3,},
   ],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",

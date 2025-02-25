@@ -4,7 +4,7 @@ function NpcInteractionSystems_setup_018_TeaseFisically(){
         ["already_introduced", "in_conversation", "relationship_with_pc", "traits"], 
         function(entity, args) {
             var npc = entity.relationship_with_pc;
-            if (npc.check_attraction(30)) {
+            if (npc.check_all(undefined,50,50)) {
                 npc.attraction += 8;
                 npc.desire += 5; // Teasing builds desire
                 npc.interact(5);
