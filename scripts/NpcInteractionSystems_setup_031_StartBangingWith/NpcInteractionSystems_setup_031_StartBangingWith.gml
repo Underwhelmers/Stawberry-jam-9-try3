@@ -6,7 +6,7 @@ function NpcInteractionSystems_setup_031_StartBangingWith() {
             var npc = entity.relationship_with_pc;
             
 			if (npc.check_all(undefined,60,60,60,60)) {
-				StateComponents.banging_state.add_to(entity);
+				StateComponents.types[$ "banging_state"].add_to(entity);
 				
 		        scr_chat(entity.name, "start_banging_with_positive");
 			} else {
