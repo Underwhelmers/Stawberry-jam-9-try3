@@ -1,12 +1,13 @@
 function NpcInteractionSystems_setup_032_AskToMoveSomewherePrivateTo() {
     NpcInteractionSystems.AskToMoveSomewherePrivateTo = ecs_setup_system_player_npc_interaction(
         "ask {name} to move somewhere private",
-        ["interested_sexualy", "is_aroused", "!alone_with_pc", "relationship_with_pc", "traits"],
+        ["interested_sexualy", "is_aroused", "!alone_with_pc", "relationship_with_pc", "traits", "sitting_together", "in_conversation"],
         function(entity, args) {
             var npc = entity.relationship_with_pc;
             
             // Conditions for moving to a private room
             if (npc.check_all(undefined, 50, 60, 60)) { // Requires moderate trust and desire
+				
                 // Success: Move to private setting
 				StateComponents.types[$ "sitting_together"].remove_from(entity);
 				StateComponents.types[$ "in_conversation"].remove_from(entity);

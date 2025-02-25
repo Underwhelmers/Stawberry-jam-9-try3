@@ -213,6 +213,8 @@
     {"id":{"name":"scr_set_scale","path":"scripts/scr_set_scale/scr_set_scale.yy",},},
     {"id":{"name":"scr_setup_entity_as_asset","path":"scripts/scr_setup_entity_as_asset/scr_setup_entity_as_asset.yy",},},
     {"id":{"name":"scr_setup_entity_as_npc","path":"scripts/scr_setup_entity_as_npc/scr_setup_entity_as_npc.yy",},},
+    {"id":{"name":"scr_setup_map","path":"scripts/scr_setup_map/scr_setup_map.yy",},},
+    {"id":{"name":"scr_setup_name_generators","path":"scripts/scr_setup_name_generators/scr_setup_name_generators.yy",},},
     {"id":{"name":"scr_setup_simulation_system","path":"scripts/scr_setup_simulation_system/scr_setup_simulation_system.yy",},},
     {"id":{"name":"scr_setup_word_variants_for_encounter","path":"scripts/scr_setup_word_variants_for_encounter/scr_setup_word_variants_for_encounter.yy",},},
     {"id":{"name":"scr_setup_word_variants","path":"scripts/scr_setup_word_variants/scr_setup_word_variants.yy",},},
