@@ -6,7 +6,7 @@
   "name":"StateComponents",
   "parent":{
     "name":"Components",
-    "path":"folders/1 - Text scene setup/ECS/Components.yy",
+    "path":"folders/3 - Run traveling/OLD/Components.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

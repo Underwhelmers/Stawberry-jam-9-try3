@@ -6,7 +6,7 @@
   "name":"scr_apply_traits",
   "parent":{
     "name":"NPC Traits",
-    "path":"folders/1 - Text scene setup/NPC Traits.yy",
+    "path":"folders/3 - Run traveling/OLD/NPC Traits.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

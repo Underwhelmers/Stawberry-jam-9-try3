@@ -6,7 +6,7 @@
   "name":"scr_npc_initiate_intimacy",
   "parent":{
     "name":"NPC Actions",
-    "path":"folders/1 - Text scene setup/ECS/Systems/NPC Actions.yy",
+    "path":"folders/3 - Run traveling/OLD/Systems/NPC Actions.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

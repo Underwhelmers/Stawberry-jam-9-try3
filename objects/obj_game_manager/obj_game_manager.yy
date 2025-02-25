@@ -1,17 +1,17 @@
 {
   "$GMObject":"",
-  "%Name":"obj_text_scene_initializator",
+  "%Name":"obj_game_manager",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_text_scene_initializator",
+  "name":"obj_game_manager",
   "overriddenProperties":[],
   "parent":{
-    "name":"1 - Text scene setup",
-    "path":"folders/1 - Text scene setup.yy",
+    "name":"Objects",
+    "path":"folders/1 - Text scene setup/Objects.yy",
   },
   "parentObjectId":null,
   "persistent":false,

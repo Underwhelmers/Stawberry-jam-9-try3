@@ -15,6 +15,8 @@ function scr_setup_word_variants() {
 		
 		irregular_ing_from_verb: ds_map_create(),
 		make_ing_from_verb: text_make_ing_from_verb,
+		
+		make_third_person_singular_present_from_verb: text_make_third_person_singular_present_from_verb
 	};
 	
     ds_map_add(global.language_rules.irregular_plurals, "child", "children");
@@ -206,4 +208,19 @@ function text_make_ing_from_verb(_verb) {
 
     // Rule 4: Default case (for regular verbs that don't fall into the above rules)
     return _verb + "ing";
+}
+
+function text_make_third_person_singular_present_from_verb(_verb) {
+    static es_terminations = ["s","x","z","ch","sh"];
+	
+	for (var i = 0, count = array_length(es_terminations); i < count; i++) {
+		if (string_ends_with(_verb,es_terminations[i]))
+			return _verb + "es";
+	}
+	
+    if (string_ends_with(_verb, "y")) {
+        return string_copy(_verb, 1, string_length(_verb) - 1) + "ies";
+    }
+	
+    return _verb + "s";
 }

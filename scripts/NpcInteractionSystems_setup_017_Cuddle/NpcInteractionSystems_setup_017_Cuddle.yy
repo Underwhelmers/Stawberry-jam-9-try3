@@ -6,7 +6,7 @@
   "name":"NpcInteractionSystems_setup_017_Cuddle",
   "parent":{
     "name":"NPC Interactions",
-    "path":"folders/1 - Text scene setup/ECS/Systems/NPC Interactions.yy",
+    "path":"folders/3 - Run traveling/OLD/Systems/NPC Interactions.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

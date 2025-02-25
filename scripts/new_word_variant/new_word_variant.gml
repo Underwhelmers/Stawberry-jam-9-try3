@@ -47,8 +47,11 @@ function new_word_variant_from_noun(_noun, _values) {
 function new_word_variant_from_verb(_verb, _values) {
 	new_word_variant_from_key(_verb, _values);
 	
-	var _ingvalues = array_map(_values,
+	new_word_variant_from_key(global.language_rules.make_ing_from_verb(_verb),  array_map(_values,
 		function(_val, _idx) { return global.language_rules.make_ing_from_verb(_val) }
-	);
-	new_word_variant_from_key(global.language_rules.make_ing_from_verb(_verb), _ingvalues);
+	));
+	
+	new_word_variant_from_key(global.language_rules.make_third_person_singular_present_from_verb(_verb), array_map(_values,
+		function(_val, _idx) { return global.language_rules.make_third_person_singular_present_from_verb(_val) }
+	));
 }

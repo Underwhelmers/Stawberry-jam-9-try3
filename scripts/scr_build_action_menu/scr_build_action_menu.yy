@@ -6,7 +6,7 @@
   "name":"scr_build_action_menu",
   "parent":{
     "name":"Objects",
-    "path":"folders/1 - Text scene setup/Objects.yy",
+    "path":"folders/3 - Run traveling/OLD/Objects.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

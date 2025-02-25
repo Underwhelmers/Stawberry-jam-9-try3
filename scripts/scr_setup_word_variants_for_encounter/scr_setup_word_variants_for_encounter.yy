@@ -6,7 +6,7 @@
   "name":"scr_setup_word_variants_for_encounter",
   "parent":{
     "name":"Helper functions",
-    "path":"folders/1 - Text scene setup/Helper functions.yy",
+    "path":"folders/3 - Run traveling/OLD/Helper functions.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

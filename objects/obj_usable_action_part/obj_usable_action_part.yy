@@ -12,7 +12,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"Objects",
-    "path":"folders/1 - Text scene setup/Objects.yy",
+    "path":"folders/3 - Run traveling/OLD/Objects.yy",
   },
   "parentObjectId":null,
   "persistent":false,

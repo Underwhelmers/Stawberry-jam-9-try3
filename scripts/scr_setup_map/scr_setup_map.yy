@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"scr_setup_map",
   "parent":{
-    "name":"Entity",
-    "path":"folders/1 - Text scene setup/ECS/Entity.yy",
+    "name":"OLD",
+    "path":"folders/3 - Run traveling/OLD.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",
