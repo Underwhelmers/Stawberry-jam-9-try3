@@ -1,12 +1,12 @@
 {
   "$GMScript":"v1",
-  "%Name":"action_look",
+  "%Name":"parse_command",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"action_look",
+  "name":"parse_command",
   "parent":{
-    "name":"Actions",
-    "path":"folders/1 - Narrative engine/Actions.yy",
+    "name":"Functions",
+    "path":"folders/1 - Narrative engine/Functions.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

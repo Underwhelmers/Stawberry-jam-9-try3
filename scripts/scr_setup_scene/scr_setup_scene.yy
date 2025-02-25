@@ -1,12 +1,12 @@
 {
   "$GMScript":"v1",
-  "%Name":"action_look",
+  "%Name":"scr_setup_scene",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"action_look",
+  "name":"scr_setup_scene",
   "parent":{
-    "name":"Actions",
-    "path":"folders/1 - Narrative engine/Actions.yy",
+    "name":"Functions",
+    "path":"folders/1 - Narrative engine/Functions.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

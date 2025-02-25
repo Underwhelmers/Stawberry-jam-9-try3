@@ -18,8 +18,8 @@
   ],
   "name":"rm_text_scene",
   "parent":{
-    "name":"1 - Text scene setup",
-    "path":"folders/1 - Text scene setup.yy",
+    "name":"1 - Narrative engine",
+    "path":"folders/1 - Narrative engine.yy",
   },
   "parentRoom":null,
   "physicsSettings":{

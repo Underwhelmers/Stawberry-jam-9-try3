@@ -1,45 +1,28 @@
-function action_look(command) {
-    var actor = command.actor;           // "You" or NPC name
-    var targets = command.targets;       // Array of targets (may be empty)
-    var modifier = command.modifier;     // Optional adverb (e.g., "intently")
-    var output = "";
-    var is_player = (actor == "You");
-
-    if (array_length(targets) == 0) {
-        // No target: look around
-        if (is_player) {
-            output = "You look around. The room is " + choose("cozy", "dim", "spacious") + ".";
-        } else {
-            output = actor + " looks around " + (modifier != "" ? modifier : "calmly") + ".";
-        }
+function action_look(target) {
+    if (target == undefined) {
+        scr_chat("GAME",global.game_state.current_location.description);
     } else {
-        // Looking at a specific target
-        var target = targets[0]; // Handle first target only for simplicity
-
-        if (is_player) {
-            // Player looking at something
-            if (ds_map_exists(obj_game_manager.characters, target)) {
-				var char = obj_game_manager.characters[? target];
-                // Target is a character
-				var mood = char.mood;
-                var eye_color = char.eye_color;
-				output = "You look at " + target + ". They have |" + eye_color + "| and seem |" + mood + "|.";
-                output += " " + target + " glances back at you.";
-            } else {
-                // Target is an object
-                var texture = choose("smooth", "rough", "soft");
-                output = "You look at the " + target + ". It feels " + texture + ".";
+        var found = false;
+        for (var i = 0; i < array_length(global.game_state.characters); i++) {
+            if (global.game_state.characters[i].name == target) {
+                var char = global.game_state.characters[i];
+                var desc = char.name + ", a " + char.species.name + " with " + string_join_ext(", ", char.species.traits) + ".";
+                scr_chat("GAME",desc);
+                found = true;
+                break;
             }
-            if (modifier != "") {
-                output = "You " + modifier + " look at " + target + ". " + output;
+        }
+        if (!found) {
+            for (var i = 0; i < array_length(global.game_state.items); i++) {
+                if (global.game_state.items[i].name == target) {
+                    scr_chat("GAME",global.game_state.items[i].description);
+                    found = true;
+                    break;
+                }
             }
-        } else {
-            // NPC looking at something
-            var manner = (modifier != "" ? modifier : "curiously");
-            output = actor + " looks " + manner + " at " + target + ".";
+        }
+        if (!found) {
+            scr_chat("GAME","You don't see that here.");
         }
     }
-
-    // Output the result to the chat system
-    scr_chat(actor, output);
 }

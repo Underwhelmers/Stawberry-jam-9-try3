@@ -10,8 +10,8 @@
   "name":"obj_game_manager",
   "overriddenProperties":[],
   "parent":{
-    "name":"Objects",
-    "path":"folders/1 - Text scene setup/Objects.yy",
+    "name":"1 - Narrative engine",
+    "path":"folders/1 - Narrative engine.yy",
   },
   "parentObjectId":null,
   "persistent":false,

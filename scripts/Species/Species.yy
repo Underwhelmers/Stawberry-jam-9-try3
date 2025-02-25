@@ -1,12 +1,12 @@
 {
   "$GMScript":"v1",
-  "%Name":"action_look",
+  "%Name":"Species",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"action_look",
+  "name":"Species",
   "parent":{
-    "name":"Actions",
-    "path":"folders/1 - Narrative engine/Actions.yy",
+    "name":"Structs",
+    "path":"folders/1 - Narrative engine/Structs.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",
