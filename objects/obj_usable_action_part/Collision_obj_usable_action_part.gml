@@ -1,1 +1,0 @@
-smooth_separate_objects(id, other.id, 2);
