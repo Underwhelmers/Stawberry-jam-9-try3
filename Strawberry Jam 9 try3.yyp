@@ -117,7 +117,6 @@
     {"id":{"name":"ECS_EntityManager","path":"scripts/ECS_EntityManager/ECS_EntityManager.yy",},},
     {"id":{"name":"ecs_setup_component_banging_state","path":"scripts/ecs_setup_component_banging_state/ecs_setup_component_banging_state.yy",},},
     {"id":{"name":"ecs_setup_component_relationship_with_pc","path":"scripts/ecs_setup_component_relationship_with_pc/ecs_setup_component_relationship_with_pc.yy",},},
-    {"id":{"name":"ecs_setup_state_components","path":"scripts/ecs_setup_state_components/ecs_setup_state_components.yy",},},
     {"id":{"name":"ecs_setup_system_player_action","path":"scripts/ecs_setup_system_player_action/ecs_setup_system_player_action.yy",},},
     {"id":{"name":"ECS_SystemInstance","path":"scripts/ECS_SystemInstance/ECS_SystemInstance.yy",},},
     {"id":{"name":"ECS_SystemManager","path":"scripts/ECS_SystemManager/ECS_SystemManager.yy",},},
