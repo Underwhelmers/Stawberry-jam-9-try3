@@ -6,12 +6,14 @@ function ecs_action_verb_to_used_field(_action_verb) {
 	string_replace_all(
 	string_replace_all(
 	string_replace_all(
+	string_replace_all(
 		_action_verb,
 		" {name}", ""),
 		" {name1}", ""),
 		" {name2}", ""),
 		" {name3}", ""),
 		" {name4}", ""),
-		" ", "_")
+		" ", "_"),
+		"'", "")
 	;	
 }

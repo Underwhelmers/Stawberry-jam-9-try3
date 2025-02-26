@@ -1,41 +1,3 @@
-function StateComponents(_name, _parent = undefined) constructor {
-	name = _name;
-	childs = [self];
-	if (_parent) {
-		array_push(_parent.childs, self);
-	}
-	manager = obj_ecs_manager.component_manager;
-	current_entities = ds_list_create();
-	
-	static exists_on = function(entity) {
-		return struct_exists(entity, name);
-	};
-	
-	static default_add = function(entity, value = true) {
-		ds_list_add(current_entities, )
-		manager.add_component(entity, name, value);
-	};
-	
-	static default_remove = function(entity) {
-		var removed = [self.name];
-		var pending = ds_queue_create();
-		ds_queue_enqueue(pending, childs);
-		
-		while(!ds_queue_empty(pending)) {
-			var current = ds_queue_dequeue(pending);
-			for (var i = 1, count = array_length(current); i < count; i++) {
-				array_push(removed,current[i].name);
-				ds_queue_enqueue(pending,current[i].childs);
-			}
-		}
-		
-		ecs_change_state_with_comps(entity, removed, []);
-	};
-	
-	add_to = default_add;
-	remove_from = default_remove;
-}
-
 function ecs_setup_state_components() {
     StateComponents.types = {};
 	
@@ -63,7 +25,6 @@ function ecs_setup_state_components() {
     // Character Presence and Interaction States
     StateComponents.types.is_present = new StateComponents("is_present");
     StateComponents.types.has_talked = new StateComponents("has_talked", StateComponents.types.is_present);
-    StateComponents.types.in_conversation = new StateComponents("in_conversation", StateComponents.types.is_present);
     StateComponents.types.is_friendly = new StateComponents("is_friendly", StateComponents.types.has_talked);
     StateComponents.types.is_aroused = new StateComponents("is_aroused", StateComponents.types.is_present);
     StateComponents.types.is_intimate = new StateComponents("is_intimate", StateComponents.types.is_aroused);
@@ -80,7 +41,18 @@ function ecs_setup_state_components() {
     StateComponents.types.has_danced = new StateComponents("has_danced", StateComponents.types.is_present);
     StateComponents.types.has_introduced = new StateComponents("has_introduced", StateComponents.types.is_present);
     StateComponents.types.has_shared_ritual = new StateComponents("has_shared_ritual", StateComponents.types.is_present);
-    StateComponents.types.is_marked = new StateComponents("is_marked");
+    
+	
+	
+	
+	StateComponents.types.is_marked = new StateComponents("is_marked");
+	StateComponents.types.used_in_bond = new StateComponents("used_in_bond");
+	StateComponents.types.is_phallus = new StateComponents("is_phallus");
+	StateComponents.types.is_cavity = new StateComponents("is_cavity");
+	StateComponents.types.name_known = new StateComponents("name_known");
+	StateComponents.types.shares_pc_location = new StateComponents("shares_pc_location");
+	
+    StateComponents.types.in_conversation = new StateComponents("in_conversation", StateComponents.types.is_present);
 
     // Fetish-Related States
     StateComponents.types.has_fetish_bondage      = new StateComponents("has_fetish_bondage");
@@ -138,4 +110,52 @@ function ecs_setup_state_components() {
             default_add(entity, string_value);
         }
     );
+	
+
+    StateComponents.types.location = new StateComponents("location");
+	StateComponents.types.location.add_to = method(
+        StateComponents.types.location,
+        function(entity, location_value = undefined) {
+            default_add(entity, location_value);
+        }
+    );
+}
+
+
+function StateComponents(_name, _parent = undefined) constructor {
+	name = _name;
+	childs = [self];
+	if (_parent) {
+		array_push(_parent.childs, self);
+	}
+	manager = obj_ecs_manager.component_manager;
+	current_entities = ds_list_create();
+	
+	static exists_on = function(entity) {
+		return struct_exists(entity, name);
+	};
+	
+	static default_add = function(entity, value = true) {
+		ds_list_add(current_entities, )
+		manager.add_component(entity, name, value);
+	};
+	
+	static default_remove = function(entity) {
+		var removed = [self.name];
+		var pending = ds_queue_create();
+		ds_queue_enqueue(pending, childs);
+		
+		while(!ds_queue_empty(pending)) {
+			var current = ds_queue_dequeue(pending);
+			for (var i = 1, count = array_length(current); i < count; i++) {
+				array_push(removed,current[i].name);
+				ds_queue_enqueue(pending,current[i].childs);
+			}
+		}
+		
+		ecs_change_state_with_comps(entity, removed, []);
+	};
+	
+	add_to = default_add;
+	remove_from = default_remove;
 }

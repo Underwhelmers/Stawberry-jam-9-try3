@@ -1,20 +1,33 @@
 function scr_setup_scene(){
-	// Define a character entity
-    global.entity_lara = obj_ecs_manager.entity_manager.create_entity();
-    global.entity_lara.name = "Lara";
-    global.entity_lara.species = "Tentacled Beings";
-    global.entity_lara.personality = "shy";
-    global.entity_lara.arousal_level = 0;
-    StateComponents.types[$ "is_character"     ].add_to(global.entity_lara);
-    StateComponents.types[$ "is_present"       ].add_to(global.entity_lara);
-    StateComponents.types[$ "has_tentacles"    ].add_to(global.entity_lara);
-    StateComponents.types[$ "basic_description"].add_to(global.entity_lara, "Lara, a shy tentacled being with slick appendages.");
-    StateComponents.types[$ "has_fetish_sensory_play"].add_to(global.entity_lara);
 	
-    // Define an item entity
-    global.entity_oil = obj_ecs_manager.entity_manager.create_entity();
-	global.entity_oil.name = "Aromatic Oil";
-    StateComponents.types[$ "is_item"          ].add_to(global.entity_oil);
-    StateComponents.types[$ "is_in_inventory"  ].add_to(global.entity_oil);
-    StateComponents.types[$ "basic_description"].add_to(global.entity_oil, "A vial of musky oil.");
+	
+	// Player entity
+    global.player_entity = {
+        name: "Player",
+        short_description: "a curious adventurer",
+        species: "Human",
+        personality: "curious",
+        arousal_level: 0,
+        relationships: ds_map_create(),
+        relationship_types: ds_map_create()
+    };
+
+    // Generate procedural characters
+    global.entity_char1 = generate_procedural_entity();
+    global.entity_char2 = generate_procedural_entity();
+
+    global.entities = ds_map_create();
+    //ds_map_add(global.entities, global.player_entity.name, global.player_entity);
+    ds_map_add(global.entities, global.entity_char1.name, global.entity_char1);
+    ds_map_add(global.entities, global.entity_char2.name, global.entity_char2);
+
+    // Item: Silk Rope
+    global.entity_rope = {
+        name: "Silk Rope",
+        short_description: "a silken cord"
+    };
+    StateComponents.types[$ "is_item"].add_to(global.entity_rope);
+    StateComponents.types[$ "is_rope"].add_to(global.entity_rope);
+    StateComponents.types[$ "is_in_inventory"].add_to(global.entity_rope);
+
 }

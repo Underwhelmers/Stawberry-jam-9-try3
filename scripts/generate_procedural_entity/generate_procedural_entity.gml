@@ -32,11 +32,12 @@ function generate_procedural_entity() {
     // Generate name and description
     var name = name_prefixes[irandom(array_length(name_prefixes) - 1)] + 
                name_suffixes[irandom(array_length(name_suffixes) - 1)];
-    var short_desc = "a " + personality + " " + string_lower(species.name);
+    var short_desc = personality + " " + string_lower(species.name);
 
     // Create the entity struct
 	var entity = obj_ecs_manager.entity_manager.create_entity();
-    entity.name = name;
+    entity.name = short_desc;
+	entity.truename = name;
     entity.short_description = short_desc;
     entity.species = species.name;
     entity.personality = personality;
@@ -46,7 +47,7 @@ function generate_procedural_entity() {
     // Apply base StateComponents
     StateComponents.types[$ "is_character"].add_to(entity);
     StateComponents.types[$ "is_present"].add_to(entity);
-    StateComponents.types[$ "basic_description"].add_to(entity, name + ", " + short_desc + " with unique traits.");
+    StateComponents.types[$ "basic_description"].add_to(entity, name + ", a " + short_desc + " with unique traits.");
 
     // Apply species-specific traits
     for (var i = 0; i < array_length(species.traits); i++) {
@@ -62,9 +63,9 @@ function generate_procedural_entity() {
     StateComponents.types[$ "cultural_affinity"].add_to(entity, species.culture);
 
     // Randomly add initial interaction states (e.g., 20% chance of has_talked)
-    if (random(1) < 0.2) {
-        StateComponents.types[$ "has_talked"].add_to(entity);
-    }
+    //if (random(1) < 0.2) {
+    //    StateComponents.types[$ "has_talked"].add_to(entity);
+    //}
 
     return entity;
 }
