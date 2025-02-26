@@ -1,10 +1,9 @@
-function StateComponents(_name, _value_generator, _parent = undefined) constructor {
+function StateComponents(_name, _parent = undefined) constructor {
 	name = _name;
 	childs = [self];
 	if (_parent) {
 		array_push(_parent.childs, self);
 	}
-	value_generator = _value_generator;
 	manager = obj_ecs_manager.component_manager;
 	current_entities = ds_list_create();
 	
@@ -38,63 +37,103 @@ function StateComponents(_name, _value_generator, _parent = undefined) construct
 }
 
 function ecs_setup_state_components() {
-	StateComponents.types = {};
-	StateComponents.types.is_npc =  new StateComponents("is_npc");
+    StateComponents.types = {};
 	
-	StateComponents.types.on_the_floor =  new StateComponents("on_the_floor");
-	StateComponents.types.storable_in_backpack =  new StateComponents("storable_in_backpack");
-	StateComponents.types.on_inventory =  new StateComponents("on_inventory");
-	StateComponents.types.fragile =  new StateComponents("fragile");
-	StateComponents.types.fragile.add_to = function (entity, fragility) {
-		obj_ecs_manager.component_manager.add_component(entity, "fragile", { fragility: fragility });
-	StateComponents.types.storable_in_backpack =  new StateComponents("storable_in_backpack", just_true);
+    // Core Entity Types
+    StateComponents.types.is_character = new StateComponents("is_character");
+    StateComponents.types.is_location = new StateComponents("is_location");
+    StateComponents.types.is_item = new StateComponents("is_item");
+
+    // Species and Anatomy Identification
+    StateComponents.types.has_tentacles = new StateComponents("has_tentacles");
+    StateComponents.types.has_wings = new StateComponents("has_wings");
+    StateComponents.types.has_horns = new StateComponents("has_horns");
+
+    // Location States
+    StateComponents.types.is_bedchamber = new StateComponents("is_bedchamber", StateComponents.types.is_location);
+    StateComponents.types.is_tavern_hall = new StateComponents("is_tavern_hall", StateComponents.types.is_location);
+    StateComponents.types.is_private_nook = new StateComponents("is_private_nook", StateComponents.types.is_location);
+
+    // Item States
+    StateComponents.types.is_oil = new StateComponents("is_oil", StateComponents.types.is_item);
+    StateComponents.types.is_rope = new StateComponents("is_rope", StateComponents.types.is_item);
+    StateComponents.types.is_in_inventory = new StateComponents("is_in_inventory", StateComponents.types.is_item);
+    StateComponents.types.is_in_use = new StateComponents("is_in_use", StateComponents.types.is_item);
+
+    // Character Presence and Interaction States
+    StateComponents.types.is_present = new StateComponents("is_present", StateComponents.types.is_character);
+    StateComponents.types.has_talked = new StateComponents("has_talked", StateComponents.types.is_present);
+    StateComponents.types.is_friendly = new StateComponents("is_friendly", StateComponents.types.has_talked);
+    StateComponents.types.is_aroused = new StateComponents("is_aroused", StateComponents.types.is_present);
+    StateComponents.types.is_intimate = new StateComponents("is_intimate", StateComponents.types.is_aroused);
+
+    // Physical and Intimacy States
+    StateComponents.types.is_naked = new StateComponents("is_naked", StateComponents.types.is_character);
+    StateComponents.types.is_bound = new StateComponents("is_bound", StateComponents.types.is_character);
+    StateComponents.types.is_embraced = new StateComponents("is_embraced", StateComponents.types.is_character);
+    StateComponents.types.is_oiled = new StateComponents("is_oiled", StateComponents.types.is_character);
+    StateComponents.types.is_penetrated = new StateComponents("is_penetrated", StateComponents.types.is_intimate);
+    StateComponents.types.has_climaxed = new StateComponents("has_climaxed", StateComponents.types.is_intimate);
+
+    // Cultural Interaction States
+    StateComponents.types.has_danced = new StateComponents("has_danced", StateComponents.types.is_present);
+    StateComponents.types.has_shared_ritual = new StateComponents("has_shared_ritual", StateComponents.types.is_present);
+    StateComponents.types.is_marked = new StateComponents("is_marked", StateComponents.types.is_character); // e.g., scent marking
+
+    // Fetish-Related States
+    StateComponents.types.has_fetish_sensory_play = new StateComponents("has_fetish_sensory_play", StateComponents.types.is_character);
+    StateComponents.types.has_fetish_bondage      = new StateComponents("has_fetish_bondage", StateComponents.types.is_character);
+    StateComponents.types.has_fetish_dominance    = new StateComponents("has_fetish_dominance", StateComponents.types.is_character);
+
+    // Description States with Custom add_to
+    StateComponents.types.basic_description = new StateComponents("basic_description");
+    StateComponents.types.basic_description.add_to = method(
+        StateComponents.types.basic_description,
+        function(entity, string_value) {
+            default_add(entity, string_value);
+        }
+    );
+    StateComponents.types.detailed_description = new StateComponents("detailed_description");
+    StateComponents.types.detailed_description.add_to = method(
+        StateComponents.types.detailed_description,
+        function(entity, string_value) {
+            default_add(entity, string_value);
+        }
+    );
+
+    // Relationship State with Numerical Value
+    StateComponents.types.relationship_level = new StateComponents("relationship_level");
+    StateComponents.types.relationship_level.add_to = method(
+        StateComponents.types.relationship_level,
+        function(entity, value) {
+            default_add(entity, value); // Value could be an integer (e.g., 0-100)
+        }
+    );
+
+    // Arousal Level with Numerical Value
+    StateComponents.types.arousal_level = new StateComponents("arousal_level");
+    StateComponents.types.arousal_level.add_to = method(
+        StateComponents.types.arousal_level,
+        function(entity, value) {
+            default_add(entity, value); // e.g., 0-100 scale
+        }
+    );
+
+    // Cultural Affinity State
+    StateComponents.types.cultural_affinity = new StateComponents("cultural_affinity");
+    StateComponents.types.cultural_affinity.add_to = method(
+        StateComponents.types.cultural_affinity,
+        function(entity, culture_name) {
+            default_add(entity, culture_name); // e.g., "Tentacled Culture"
+        }
+    );
 	
 	
-	StateComponents.types.already_introduced =  new StateComponents("already_introduced");
-	StateComponents.types.name_is_known =  new StateComponents("name_is_known");
-	StateComponents.types.interested_sexualy =  new StateComponents("interested_sexualy");
-	StateComponents.types.is_aroused =  new StateComponents("is_aroused", just_true);
-	
-	StateComponents.types.reached_climax =  new StateComponents("reached_climax");
-	StateComponents.types.is_aroused =  new StateComponents("is_aroused");
-	StateComponents.types.is_naked =  new StateComponents("is_naked");
-	StateComponents.types.is_satisfied =  new StateComponents("is_satisfied");
-	StateComponents.types.is_comfortable =  new StateComponents("is_comfortable");
-	StateComponents.types.waiting_player_response = new StateComponents("waiting_player_response");
-	StateComponents.types.out_of_reach =  new StateComponents("out_of_reach", just_true);
-	
-	StateComponents.types.banging_state = ecs_setup_component_banging_state();
-	
-	StateComponents.types.is_in_reach =  new StateComponents("is_in_reach");
-	StateComponents.types.in_conversation =  new StateComponents("in_conversation", StateComponents.types.is_in_reach);
-	StateComponents.types.sitting_together =  new StateComponents("sitting_together", StateComponents.types.is_in_reach);
-	StateComponents.types.alone_with_pc = new StateComponents("alone_with_pc", StateComponents.types.is_in_reach);
-	
-	StateComponents.types.is_location = new StateComponents("is_location");
-    StateComponents.types.shares_location_with_pc = new StateComponents("shares_location_with_pc");
-    
-    // Customize location component
-	StateComponents.types.location = new StateComponents("location");
-    StateComponents.types.location.add_to = function(entity) {
-        obj_ecs_manager.component_manager.add_component(entity, "location", undefined); // Will hold location entity ID
-    };
-    
-    // Customize door component
-    StateComponents.types.door = new StateComponents("door");
-    StateComponents.types.door.add_to = function(entity) {
-        obj_ecs_manager.component_manager.add_component(entity, "door", {
-            target_location: undefined // ID of target location entity
-        });
-    };
-    
-    // Customize transition component (generalized for other types)
-    StateComponents.types.transition = new StateComponents("transition");
-		obj_ecs_manager.component_manager.add_component(entity, "fragile", { fragility: fragility });
-	};
-    StateComponents.types.transition.add_to = function(entity) {
-        obj_ecs_manager.component_manager.add_component(entity, "transition", {
-            target_location: undefined,
-            type: "generic" // e.g., "stairs", "window"
-        });
-    };
+    StateComponents.types.name = new StateComponents("name");
+	StateComponents.types.name.add_to = method(
+        StateComponents.types.name,
+        function(entity, string_value) {
+            default_add(entity, string_value);
+        }
+    );
 }

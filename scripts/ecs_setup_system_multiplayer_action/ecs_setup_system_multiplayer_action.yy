@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"scr_usable_action_part_callback",
+  "%Name":"ecs_setup_system_multiplayer_action",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"scr_usable_action_part_callback",
+  "name":"ecs_setup_system_multiplayer_action",
   "parent":{
     "name":"Helpers",
     "path":"folders/1 - Text scene setup/Player actions/Helpers.yy",
