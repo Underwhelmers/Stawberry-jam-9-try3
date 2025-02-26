@@ -1,1 +1,0 @@
-draw_text(x,y,string("REMAINING: {0}",alarm[0]));
