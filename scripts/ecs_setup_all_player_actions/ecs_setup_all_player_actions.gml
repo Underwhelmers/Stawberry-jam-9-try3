@@ -1,4 +1,5 @@
 function ecs_setup_all_player_actions() {
+	ecs_setup_action_ask_name_to();
     ecs_setup_action_touch();
 	ecs_setup_action_look();
 	ecs_setup_action_move_to();
@@ -39,5 +40,4 @@ function ecs_setup_all_player_actions() {
     ecs_setup_action_ride();
     ecs_setup_action_check();
     ecs_setup_action_free();
-	ecs_setup_action_ask_name_to();
 }

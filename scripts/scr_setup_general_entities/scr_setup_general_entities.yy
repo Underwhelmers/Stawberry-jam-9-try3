@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"ItemTypes",
+  "%Name":"scr_setup_general_entities",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"ItemTypes",
+  "name":"scr_setup_general_entities",
   "parent":{
     "name":"ECS",
     "path":"folders/1 - Text scene setup/ECS.yy",

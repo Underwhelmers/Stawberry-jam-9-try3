@@ -5,7 +5,6 @@ function ecs_setup_action_talk_to() {
         function(entity) {
             scr_inform("You talk to {0}.", entity.name);
             StateComponents.types[$ "has_talked"].add_to(entity);
-            StateComponents.types[$ "name_known"].add_to(entity);
             scr_chat(entity.name, "*Nods in response*");
         }
     );
