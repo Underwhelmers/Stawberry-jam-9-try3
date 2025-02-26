@@ -4,6 +4,7 @@ function scr_setup_scene(){
     global.entity_lara.name = "Lara";
     global.entity_lara.species = "Tentacled Beings";
     global.entity_lara.personality = "shy";
+    global.entity_lara.arousal_level = 0;
     StateComponents.types[$ "is_character"     ].add_to(global.entity_lara);
     StateComponents.types[$ "is_present"       ].add_to(global.entity_lara);
     StateComponents.types[$ "has_tentacles"    ].add_to(global.entity_lara);

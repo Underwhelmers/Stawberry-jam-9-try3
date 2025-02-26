@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"scr_setup_scene",
+  "%Name":"generate_procedural_entity",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"scr_setup_scene",
+  "name":"generate_procedural_entity",
   "parent":{
     "name":"ECS",
     "path":"folders/1 - Text scene setup/ECS.yy",

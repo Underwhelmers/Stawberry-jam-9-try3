@@ -9,6 +9,7 @@ function ecs_setup_system_player_action(_action_verb, _requirements, _effect) {
 	
 	
 	var _action = {
+		multientity: false,
 		tracker: new ECS_EntityTracker(_requirements),
 		action_verb: _action_verb,
 		get_text: function(entity) {

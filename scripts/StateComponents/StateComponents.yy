@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"StateComponents",
   "parent":{
-    "name":"Components",
-    "path":"folders/1 - Text scene setup/ECS/Components.yy",
+    "name":"ECS",
+    "path":"folders/1 - Text scene setup/ECS.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

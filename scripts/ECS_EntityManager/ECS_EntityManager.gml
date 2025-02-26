@@ -1,5 +1,5 @@
 function ECS_EntityManager(_system_manager) constructor {
-    static next_entity_id = 0;
+    static next_entity_id = 1;
     entities = ds_map_create();
 	
     static create_entity = function() {

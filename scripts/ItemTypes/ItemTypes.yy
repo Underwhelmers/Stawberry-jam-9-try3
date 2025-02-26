@@ -1,12 +1,12 @@
 {
   "$GMScript":"v1",
-  "%Name":"scr_setup_map",
+  "%Name":"ItemTypes",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"scr_setup_map",
+  "name":"ItemTypes",
   "parent":{
-    "name":"Entity",
-    "path":"folders/1 - Text scene setup/ECS/Entity.yy",
+    "name":"ECS",
+    "path":"folders/1 - Text scene setup/ECS.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

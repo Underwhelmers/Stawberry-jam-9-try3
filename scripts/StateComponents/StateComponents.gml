@@ -61,8 +61,9 @@ function ecs_setup_state_components() {
     StateComponents.types.is_in_use = new StateComponents("is_in_use", StateComponents.types.is_item);
 
     // Character Presence and Interaction States
-    StateComponents.types.is_present = new StateComponents("is_present", StateComponents.types.is_character);
+    StateComponents.types.is_present = new StateComponents("is_present");
     StateComponents.types.has_talked = new StateComponents("has_talked", StateComponents.types.is_present);
+    StateComponents.types.in_conversation = new StateComponents("in_conversation", StateComponents.types.is_present);
     StateComponents.types.is_friendly = new StateComponents("is_friendly", StateComponents.types.has_talked);
     StateComponents.types.is_aroused = new StateComponents("is_aroused", StateComponents.types.is_present);
     StateComponents.types.is_intimate = new StateComponents("is_intimate", StateComponents.types.is_aroused);
@@ -77,13 +78,14 @@ function ecs_setup_state_components() {
 
     // Cultural Interaction States
     StateComponents.types.has_danced = new StateComponents("has_danced", StateComponents.types.is_present);
+    StateComponents.types.has_introduced = new StateComponents("has_introduced", StateComponents.types.is_present);
     StateComponents.types.has_shared_ritual = new StateComponents("has_shared_ritual", StateComponents.types.is_present);
-    StateComponents.types.is_marked = new StateComponents("is_marked", StateComponents.types.is_character); // e.g., scent marking
+    StateComponents.types.is_marked = new StateComponents("is_marked");
 
     // Fetish-Related States
-    StateComponents.types.has_fetish_sensory_play = new StateComponents("has_fetish_sensory_play", StateComponents.types.is_character);
-    StateComponents.types.has_fetish_bondage      = new StateComponents("has_fetish_bondage", StateComponents.types.is_character);
-    StateComponents.types.has_fetish_dominance    = new StateComponents("has_fetish_dominance", StateComponents.types.is_character);
+    StateComponents.types.has_fetish_bondage      = new StateComponents("has_fetish_bondage");
+    StateComponents.types.has_fetish_dominance    = new StateComponents("has_fetish_dominance");
+    StateComponents.types.has_fetish_sensory_play = new StateComponents("has_fetish_sensory_play");
 
     // Description States with Custom add_to
     StateComponents.types.basic_description = new StateComponents("basic_description");
