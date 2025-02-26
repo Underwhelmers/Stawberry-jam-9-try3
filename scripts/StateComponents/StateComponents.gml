@@ -17,10 +17,10 @@ function ecs_setup_state_components() {
     StateComponents.types.is_private_nook = new StateComponents("is_private_nook", StateComponents.types.is_location);
 
     // Item States
-    StateComponents.types.is_oil = new StateComponents("is_oil", StateComponents.types.is_item);
-    StateComponents.types.is_rope = new StateComponents("is_rope", StateComponents.types.is_item);
-    StateComponents.types.is_in_inventory = new StateComponents("is_in_inventory", StateComponents.types.is_item);
-    StateComponents.types.is_in_use = new StateComponents("is_in_use", StateComponents.types.is_item);
+    StateComponents.types.is_oil = new StateComponents("is_oil");
+    StateComponents.types.is_rope = new StateComponents("is_rope");
+    StateComponents.types.is_in_use = new StateComponents("is_in_use");
+    StateComponents.types.is_in_inventory = new StateComponents("is_in_inventory");
 
     // Character Presence and Interaction States
     StateComponents.types.is_present = new StateComponents("is_present");
@@ -153,7 +153,9 @@ function StateComponents(_name, _parent = undefined) constructor {
 			}
 		}
 		
-		ecs_change_state_with_comps(entity, removed, []);
+		for (var i = 0, count = array_length(removed); i < count; i++) {
+			manager.remove_component(entity, removed[i]);
+		}
 	};
 	
 	add_to = default_add;

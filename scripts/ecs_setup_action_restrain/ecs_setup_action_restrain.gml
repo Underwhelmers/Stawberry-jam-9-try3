@@ -6,8 +6,8 @@ function ecs_setup_action_restrain() {
             var char = entities[0];
             var rope = entities[1];
             scr_inform("You restrain {0} with {1}.", (char.name), rope.name);
-            StateComponents.types[$ "is_bound"].add_to(char);
-            StateComponents.types[$ "used_in_bound"].add_to(rope);
+            StateComponents.types[$ "is_bound"].add_to(char, rope);
+            StateComponents.types[$ "is_in_use"].add_to(rope, char);
             StateComponents.types[$ "is_in_inventory"].remove_from(rope);
 			
             if (StateComponents.types[$ "has_fetish_bondage"].exists_on(char)) {
