@@ -46,13 +46,8 @@ function ecs_setup_state_components() {
     StateComponents.types.has_introduced = new StateComponents("has_introduced", StateComponents.types.is_present);
     StateComponents.types.has_shared_ritual = new StateComponents("has_shared_ritual", StateComponents.types.is_present);
     
-	
-	
-	
+	StateComponents.types.is_exposed = new StateComponents("is_exposed");
 	StateComponents.types.is_marked = new StateComponents("is_marked");
-	StateComponents.types.used_in_bond = new StateComponents("used_in_bond");
-	StateComponents.types.is_phallus = new StateComponents("is_phallus");
-	StateComponents.types.is_cavity = new StateComponents("is_cavity");
 	StateComponents.types.name_known = new StateComponents("name_known");
 	StateComponents.types.shares_pc_location = new StateComponents("shares_pc_location");
 	

@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"ecs_setup_action_check",
   "parent":{
-    "name":"Instances",
-    "path":"folders/1 - Text scene setup/Player actions/Instances.yy",
+    "name":"0 - Exploration",
+    "path":"folders/1 - Text scene setup/Player actions/Instances/0 - Exploration.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

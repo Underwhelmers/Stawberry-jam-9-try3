@@ -1,7 +1,7 @@
 function ecs_setup_action_undress() {
     ecs_setup_system_player_action(
         "undress {name}",
-        ["is_present", "has_talked"],
+        ["is_present", "has_talked","!is_naked"],
         function(entity) {
             scr_inform("You undress {0}.", (entity.name));
             StateComponents.types[$ "is_naked"].add_to(entity);

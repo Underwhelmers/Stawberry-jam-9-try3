@@ -1,4 +1,4 @@
-function scr_setup_general_entities() constructor {
+function scr_setup_general_entities() {
 	var EManager = obj_ecs_manager.entity_manager;
 	
     // --- Body Parts ---

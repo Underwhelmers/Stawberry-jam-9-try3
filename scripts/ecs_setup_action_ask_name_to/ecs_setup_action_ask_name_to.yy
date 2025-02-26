@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"ecs_setup_action_ask_name_to",
   "parent":{
-    "name":"Instances",
-    "path":"folders/1 - Text scene setup/Player actions/Instances.yy",
+    "name":"1 - Courting",
+    "path":"folders/1 - Text scene setup/Player actions/Instances/1 - Courting.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

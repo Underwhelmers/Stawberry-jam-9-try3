@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"ecs_setup_action_restrain",
   "parent":{
-    "name":"Instances",
-    "path":"folders/1 - Text scene setup/Player actions/Instances.yy",
+    "name":"5 - Fetish",
+    "path":"folders/1 - Text scene setup/Player actions/Instances/5 - Fetish.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

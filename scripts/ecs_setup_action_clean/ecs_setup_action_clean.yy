@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"ecs_setup_action_clean",
   "parent":{
-    "name":"Instances",
-    "path":"folders/1 - Text scene setup/Player actions/Instances.yy",
+    "name":"4 - Post coital",
+    "path":"folders/1 - Text scene setup/Player actions/Instances/4 - Post coital.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",
