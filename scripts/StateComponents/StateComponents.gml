@@ -1,16 +1,20 @@
-function StateComponents(_name, _parent = undefined) constructor {
+function StateComponents(_name, _value_generator, _parent = undefined) constructor {
 	name = _name;
 	childs = [self];
 	if (_parent) {
 		array_push(_parent.childs, self);
 	}
+	value_generator = _value_generator;
+	manager = obj_ecs_manager.component_manager;
+	current_entities = ds_list_create();
 	
 	static exists_on = function(entity) {
 		return struct_exists(entity, name);
 	};
 	
-	static default_add = function(entity) {
-		obj_ecs_manager.component_manager.add_component(entity, name, true);
+	static default_add = function(entity, value = true) {
+		ds_list_add(current_entities, )
+		manager.add_component(entity, name, value);
 	};
 	
 	static default_remove = function(entity) {
@@ -36,7 +40,6 @@ function StateComponents(_name, _parent = undefined) constructor {
 function ecs_setup_state_components() {
 	StateComponents.types = {};
 	StateComponents.types.is_npc =  new StateComponents("is_npc");
-	StateComponents.types.is_object =  new StateComponents("is_object");
 	
 	StateComponents.types.on_the_floor =  new StateComponents("on_the_floor");
 	StateComponents.types.storable_in_backpack =  new StateComponents("storable_in_backpack");
@@ -44,12 +47,13 @@ function ecs_setup_state_components() {
 	StateComponents.types.fragile =  new StateComponents("fragile");
 	StateComponents.types.fragile.add_to = function (entity, fragility) {
 		obj_ecs_manager.component_manager.add_component(entity, "fragile", { fragility: fragility });
-	};
+	StateComponents.types.storable_in_backpack =  new StateComponents("storable_in_backpack", just_true);
 	
 	
 	StateComponents.types.already_introduced =  new StateComponents("already_introduced");
 	StateComponents.types.name_is_known =  new StateComponents("name_is_known");
 	StateComponents.types.interested_sexualy =  new StateComponents("interested_sexualy");
+	StateComponents.types.is_aroused =  new StateComponents("is_aroused", just_true);
 	
 	StateComponents.types.reached_climax =  new StateComponents("reached_climax");
 	StateComponents.types.is_aroused =  new StateComponents("is_aroused");
@@ -57,11 +61,10 @@ function ecs_setup_state_components() {
 	StateComponents.types.is_satisfied =  new StateComponents("is_satisfied");
 	StateComponents.types.is_comfortable =  new StateComponents("is_comfortable");
 	StateComponents.types.waiting_player_response = new StateComponents("waiting_player_response");
+	StateComponents.types.out_of_reach =  new StateComponents("out_of_reach", just_true);
 	
 	StateComponents.types.banging_state = ecs_setup_component_banging_state();
-	StateComponents.types.is_banging =  new StateComponents("is_banging", StateComponents.types.banging_state);
 	
-	StateComponents.types.out_of_reach =  new StateComponents("out_of_reach");
 	StateComponents.types.is_in_reach =  new StateComponents("is_in_reach");
 	StateComponents.types.in_conversation =  new StateComponents("in_conversation", StateComponents.types.is_in_reach);
 	StateComponents.types.sitting_together =  new StateComponents("sitting_together", StateComponents.types.is_in_reach);
@@ -86,6 +89,8 @@ function ecs_setup_state_components() {
     
     // Customize transition component (generalized for other types)
     StateComponents.types.transition = new StateComponents("transition");
+		obj_ecs_manager.component_manager.add_component(entity, "fragile", { fragility: fragility });
+	};
     StateComponents.types.transition.add_to = function(entity) {
         obj_ecs_manager.component_manager.add_component(entity, "transition", {
             target_location: undefined,
