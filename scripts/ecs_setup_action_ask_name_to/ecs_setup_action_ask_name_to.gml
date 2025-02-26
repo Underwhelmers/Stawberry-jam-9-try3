@@ -3,9 +3,9 @@ function ecs_setup_action_ask_name_to() {
         "ask name to {name}",
         ["is_present", "has_talked"],
         function(entity) {
-            scr_inform("You flirt with {0}.", entity.name);
-            StateComponents.types[$ "is_aroused"].add_to(entity);
-            entity.arousal_level += 15;
+            scr_inform("You asked name to the.", entity.name);
+            StateComponents.types[$ "is_known"].add_to(entity);
+			entity.name = entity.truename;
             scr_chat(entity.name, "*Smiles coyly*");
         }
     );

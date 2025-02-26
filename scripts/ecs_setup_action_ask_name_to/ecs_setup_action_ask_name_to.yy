@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"ecs_setup_action_flirt_with_1",
+  "%Name":"ecs_setup_action_ask_name_to",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"ecs_setup_action_flirt_with_1",
+  "name":"ecs_setup_action_ask_name_to",
   "parent":{
     "name":"Instances",
     "path":"folders/1 - Text scene setup/Player actions/Instances.yy",
