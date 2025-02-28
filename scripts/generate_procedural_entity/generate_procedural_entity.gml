@@ -1,11 +1,9 @@
 function generate_procedural_entity() {
+    // Generate random attributes
+    var species = array_choose(CharacterSpecies.all_instances);
+    var gender  = array_choose(species.genders);
+	
     // Define pools for procedural generation
-    var species_pool = [
-        { name: "Tentacled Beings", traits: ["has_tentacles"], culture: "Tentacled Culture" },
-        { name: "Winged Ones", traits: ["has_wings"], culture: "Winged Culture" },
-        { name: "Horned Ones", traits: ["has_horns"], culture: "Horned Culture" }
-    ];
-    
     var personality_pool = ["shy", "dominant", "curious", "playful"];
     
     var fetish_pool = [
@@ -17,8 +15,6 @@ function generate_procedural_entity() {
     var name_prefixes = ["Eld", "Syl", "Tor", "Zar"];
     var name_suffixes = ["ia", "en", "ak", "is"];
 
-    // Generate random attributes
-    var species = species_pool[irandom(array_length(species_pool) - 1)];
     var personality = personality_pool[irandom(array_length(personality_pool) - 1)];
     var fetish_count = irandom_range(1, 2); // 1-2 fetishes
     var fetishes = [];
@@ -32,7 +28,8 @@ function generate_procedural_entity() {
     // Generate name and description
     var name = name_prefixes[irandom(array_length(name_prefixes) - 1)] + 
                name_suffixes[irandom(array_length(name_suffixes) - 1)];
-    var short_desc = personality + " " + string_lower(species.name);
+    var short_desc = gender.as_adjective + " " + species.creature_description;
+	//var short_desc = personality + " " + string_lower(species.creature_description);
 
     // Create the entity struct
 	var entity = obj_ecs_manager.entity_manager.create_entity();
@@ -48,12 +45,14 @@ function generate_procedural_entity() {
     StateComponents.types[$ "is_character"].add_to(entity);
     StateComponents.types[$ "is_present"].add_to(entity);
     StateComponents.types[$ "basic_description"].add_to(entity, name + ", a " + short_desc + " with unique traits.");
+	StateComponents.types[$ "body"].add_to(entity, gender.body_parts);
 
     // Apply species-specific traits
-    for (var i = 0; i < array_length(species.traits); i++) {
-        StateComponents.types[$ species.traits[i]].add_to(entity);
+    for (var i = 0; i < array_length(gender.extra_traits); i++) {
+        StateComponents.types[$ gender.extra_traits[i]].add_to(entity);
     }
 
+	/*
     // Apply random fetishes
     for (var i = 0; i < array_length(fetishes); i++) {
         StateComponents.types[$ fetishes[i].name].add_to(entity);
@@ -66,6 +65,8 @@ function generate_procedural_entity() {
     //if (random(1) < 0.2) {
     //    StateComponents.types[$ "has_talked"].add_to(entity);
     //}
+	*/
+	
 
     return entity;
 }

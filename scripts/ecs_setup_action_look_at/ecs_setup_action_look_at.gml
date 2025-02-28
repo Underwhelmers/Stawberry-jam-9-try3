@@ -7,6 +7,7 @@ function ecs_setup_action_look_at() {
             var bodypart = entities[1];
             scr_inform("You look at {0}'s {1}.", (char.name), bodypart.name);
             scr_chat((char.name), "*Notices your gaze*");
-        }
+        },
+		validate_character_body_part_compatible
     );
 }

@@ -5,9 +5,14 @@ function ecs_setup_action_tease() {
         function(entities) {
             var char = entities[0];
             var bodypart = entities[1];
+			if (body_part_access_has_issues(char,bodypart)) {
+				
+			}
+			
             scr_inform("You tease {0}'s {1}.", (char.name), bodypart.name);
             char.arousal_level += 15;
             scr_chat((char.name), "*Squirms playfully*");
-        }
+        },
+		validate_character_body_part_compatible
     );
 }

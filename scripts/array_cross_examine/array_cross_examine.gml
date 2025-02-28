@@ -40,7 +40,7 @@ function array_cross_examine_ext(_array_of_arrays, _transfer_data, _apply_functi
     while (true) {
         // Build the composite array for the current combination
         for (var i = 0; i < array_count; i++) {
-            array_push(composite, _array_of_arrays[i][indices[i]]);
+            composite[i] = _array_of_arrays[i][indices[i]];
         }
         // Apply the function to the composite
         _apply_function(composite, _transfer_data);

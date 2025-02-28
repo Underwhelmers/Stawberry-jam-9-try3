@@ -1,5 +1,7 @@
 function scr_setup_scene(){
-	scr_setup_general_entities(); 
+	scr_setup_body_parts();
+	scr_setup_general_entities();
+	scr_setup_character_species();
 	// Player entity
     global.player_entity = {
         name: "Player",

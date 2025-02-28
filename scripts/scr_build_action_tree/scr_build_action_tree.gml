@@ -10,23 +10,26 @@ function scr_build_action_tree(player_actions) {
             entities
         );
     });
+	
 	for (var i = 0, count = array_length(player_actions); i < count; i++) {
-		if (player_actions[i].multientity) { // Multi-entity action
-            var entity_combinations = generate_entity_combinations(player_actions[i].trackers);
-            
+		var action = player_actions[i];
+		
+		if (action.multientity) { // Multi-entity action
+            var entity_combinations = generate_entity_combinations(action.trackers);
             for (var j = 0; j < array_length(entity_combinations); j++) {
                 var combo = entity_combinations[j];
-                tree.add_leaf( player_actions[i].get_text(combo), {
-                        entities: combo, // Array of entities (e.g., [Oil, Lara])
-                        action_verb: player_actions[i].action_verb
-                    }
-                );
+				var leaf_text = action.get_text(combo);
+				
+				if (action.extra_conditions(combo))
+	                tree.add_leaf(leaf_text, {
+	                        entities: combo, // Array of entities (e.g., [Oil, Lara])
+	                        action_verb: action.action_verb
+	                    }
+	                );
             }
 		} else { // Single-entity action
-			var candidates = ds_map_keys_to_array(player_actions[i].tracker.entities);
-		
+			var candidates = ds_map_keys_to_array(action.tracker.entities);
 			for (var j = 0, count2 = array_length(candidates); j < count2; j++) {
-				var action = player_actions[i];
 				tree.add_leaf(
 					action.get_text(candidates[j]), {
 						entities: [candidates[j]],

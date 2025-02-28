@@ -2,19 +2,22 @@ function ecs_setup_state_components() {
     StateComponents.types = {};
 	
     // Core Entity Types
-    StateComponents.types.is_character = new StateComponents("is_character");
     StateComponents.types.is_location = new StateComponents("is_location");
     StateComponents.types.is_item = new StateComponents("is_item");
 	
+	
+	
+    StateComponents.types.is_character = new StateComponents("is_character");
+	
+    
     StateComponents.types.is_body_part = new StateComponents("is_body_part");
     StateComponents.types.is_cavity = new StateComponents("is_cavity");
     StateComponents.types.is_phallus = new StateComponents("is_phallus");
-
-    // Species and Anatomy Identification
-    StateComponents.types.has_tentacles = new StateComponents("has_tentacles");
-    StateComponents.types.has_wings = new StateComponents("has_wings");
-    StateComponents.types.has_horns = new StateComponents("has_horns");
-
+	
+	
+	StateComponents.types.have_shown_interest = new StateComponents("have_shown_interest");
+	StateComponents.types.have_shown_arousal = new StateComponents("have_shown_arousal");
+	
     // Location States
     StateComponents.types.is_bedchamber = new StateComponents("is_bedchamber", StateComponents.types.is_location);
     StateComponents.types.is_tavern_hall = new StateComponents("is_tavern_hall", StateComponents.types.is_location);
