@@ -65,7 +65,6 @@
     {"id":{"name":"obj_base_slider","path":"objects/obj_base_slider/obj_base_slider.yy",},},
     {"id":{"name":"obj_camera_body","path":"objects/obj_camera_body/obj_camera_body.yy",},},
     {"id":{"name":"obj_ecs_manager","path":"objects/obj_ecs_manager/obj_ecs_manager.yy",},},
-    {"id":{"name":"obj_text_scene_initializator","path":"objects/obj_text_scene_initializator/obj_text_scene_initializator.yy",},},
     {"id":{"name":"obj_usable_action_manager","path":"objects/obj_usable_action_manager/obj_usable_action_manager.yy",},},
     {"id":{"name":"obj_usable_action_part","path":"objects/obj_usable_action_part/obj_usable_action_part.yy",},},
     {"id":{"name":"Object10","path":"objects/Object10/Object10.yy",},},

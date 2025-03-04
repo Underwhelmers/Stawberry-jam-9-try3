@@ -1,2 +1,0 @@
-scr_chat("ME!", "asdfjawoiefjaslidjvoaw neuanoivweunrioapuwejpoiauw ejpoivuawemovunipowafuiaks djfboaiwejgnioahwioeupmakfvaen ocfpmwaeionvaiuopugmjaskpdjuioawneguhpacomcsfvf")
-scr_inform("SCREEN_H ({0}),  WINDOW_H ({1})", global.camera.height, window_get_height());
