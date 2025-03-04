@@ -4,7 +4,7 @@ function scr_setup_components_base() {
     StateComponents.types.is_item = new StateComponents("is_item");
     StateComponents.types.is_player = new StateComponents("is_player");
     StateComponents.types.is_location = new StateComponents("is_location");
-    StateComponents.types.is_body_part = new StateComponents("is_body_part");
+    StateComponents.types.is_bodypart = new StateComponents("is_bodypart");
 	
 	StateComponents.types.identity = new StateComponents("identity");
 	StateComponents.types.identity.add_to = method(

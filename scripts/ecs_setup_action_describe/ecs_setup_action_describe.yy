@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"ecs_setup_action_look_at",
+  "%Name":"ecs_setup_action_describe",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"ecs_setup_action_look_at",
+  "name":"ecs_setup_action_describe",
   "parent":{
     "name":"Instances",
     "path":"folders/1 - Text scene setup/Player actions/Instances.yy",

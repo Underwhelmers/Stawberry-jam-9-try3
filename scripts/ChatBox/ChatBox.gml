@@ -6,7 +6,9 @@ function ChatBox(width, height, font) constructor {
 	chat_height = height;
 	
 	user_colour[? "INFO"] = #9a9a9a;
-	user_colour[? "Narrator"] = #9a9a9a;
+	user_colour[? "Narrator"] = #9a9a1a;
+	user_colour[? "THOUGHT"] = #1a9a9a;
+	
 	
 	static draw = function(xleft, ybot) {
 		var oldfont = draw_get_font();

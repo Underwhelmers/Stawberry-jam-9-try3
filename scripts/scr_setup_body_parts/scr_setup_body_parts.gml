@@ -24,8 +24,6 @@ function scr_setup_body_parts() {
     global.body_parts.tail = ecs_new_body_part("tail", "A long, sinuous appendage.", "a tail", ["is_phallus"]); 
     global.body_parts.claws = ecs_new_body_part("claws", "Sharp, curved talons.", "claws");
 	
-	
-	
 	StateComponents.types.body = new StateComponents("body");
     StateComponents.types.body.add_to = method(
         StateComponents.types.body,
@@ -39,24 +37,4 @@ function scr_setup_body_parts() {
 			default_add(entity, body_inst);
         }
     );
-}
-
-
-/// @param {string} _name
-/// @param {string} _desc
-/// @param {string} _with_art
-function ecs_new_body_part(_name, _desc, _with_art, _extra_comps = []) {
-    var entity = obj_ecs_manager.entity_manager.create_entity();
-    StateComponents.types[$ "name"].add_to(entity, _name);
-    StateComponents.types[$ "is_body_part"].add_to(entity);
-    StateComponents.types[$ "basic_description"].add_to(entity, _desc);
-    entity.new_instance = function() {
-		return { covered_by: undefined };
-	};
-	entity.with_article = _with_art;
-	
-	for (var i = 0, count = array_length(_extra_comps); i < count; i++) {
-		StateComponents.types[$ _extra_comps[i]].add_to(entity);
-	}
-	return entity;
 }
