@@ -1,5 +1,4 @@
 function ecs_setup_state_components() {
-    StateComponents.types = {};
 	
     // Core Entity Types
 	
@@ -7,6 +6,7 @@ function ecs_setup_state_components() {
     StateComponents.types.is_body_part = new StateComponents("is_body_part");
     StateComponents.types.is_cavity = new StateComponents("is_cavity");
     StateComponents.types.is_phallus = new StateComponents("is_phallus");
+    StateComponents.types.is_character = new StateComponents("is_character");
 	
 	
 	StateComponents.types.have_shown_interest = new StateComponents("have_shown_interest");

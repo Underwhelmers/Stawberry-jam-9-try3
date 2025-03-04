@@ -1,4 +1,5 @@
 function scr_setup_components_base() {
+    StateComponents.types = {};
     StateComponents.types.is_npc = new StateComponents("is_npc");
     StateComponents.types.is_item = new StateComponents("is_item");
     StateComponents.types.is_player = new StateComponents("is_player");
