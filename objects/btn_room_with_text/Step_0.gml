@@ -2,8 +2,8 @@
 if (image_index == disabled_index) exit;
 	
 // Convert mouse position to GUI space
-var _mouse_x_gui = device_mouse_x_to_gui(0);
-var _mouse_y_gui = device_mouse_y_to_gui(0);
+var _mouse_x_gui = device_mouse_x(0);
+var _mouse_y_gui = device_mouse_y(0);
 
 // Handle hover and clicking behaviour
 if (position_meeting(_mouse_x_gui, _mouse_y_gui, id)) {

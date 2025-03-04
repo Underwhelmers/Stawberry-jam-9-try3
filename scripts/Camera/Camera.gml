@@ -28,6 +28,13 @@ function Camera(_x, _y, _width, _height, _viewport_index) constructor {
 	    view_set_camera(viewport_index, camera_id);
 	    view_set_wport(viewport_index, width);
 	    view_set_hport(viewport_index, height);
+		
+		if (os_browser != browser_not_a_browser) {
+			width = browser_width-5;
+			height = browser_height-5;
+			window_set_size(width, height);
+			display_set_gui_size(width, height);
+		}
 	}
 	
     // Update camera position
@@ -40,6 +47,15 @@ function Camera(_x, _y, _width, _height, _viewport_index) constructor {
         // Apply zoom
         camera_set_view_size(camera_id, width_captured, height_captured);
         camera_set_view_pos(camera_id, x, y);
+		
+		
+		if (os_browser != browser_not_a_browser && (width != browser_width-5 || height != browser_height-5)) {
+			width = browser_width-5;
+			height = browser_height-5;
+			window_set_size(width, height);
+		    view_set_wport(viewport_index, width);
+		    view_set_hport(viewport_index, height);
+		}
     };
 
     // Set the camera's position

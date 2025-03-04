@@ -11,6 +11,7 @@ function ecs_setup_all_player_actions() {
     ecs_setup_action_flirt_with();
 	
     ecs_setup_action_tease();
+	
 	//ecs_setup_action_touch();
     //ecs_setup_action_kiss();
     //ecs_setup_action_caress();

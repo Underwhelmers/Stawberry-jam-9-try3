@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"GAME_MACROS",
   "parent":{
-    "name":"0 - General",
-    "path":"folders/0 - General.yy",
+    "name":"0 - Initializer",
+    "path":"folders/0 - Initializer.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

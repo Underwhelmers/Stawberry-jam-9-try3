@@ -13,7 +13,6 @@ function scr_build_action_tree(player_actions) {
 	
 	for (var i = 0, count = array_length(player_actions); i < count; i++) {
 		var action = player_actions[i];
-		
 		if (action.multientity) { // Multi-entity action
             var entity_combinations = generate_entity_combinations(action.trackers);
             for (var j = 0; j < array_length(entity_combinations); j++) {
