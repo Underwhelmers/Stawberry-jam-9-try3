@@ -11,8 +11,8 @@
   "name":"obj_text_scene_initializator",
   "overriddenProperties":[],
   "parent":{
-    "name":"1 - Text scene setup",
-    "path":"folders/1 - Text scene setup.yy",
+    "name":"Objects",
+    "path":"folders/1 - Text scene setup/0 - Generals/Objects.yy",
   },
   "parentObjectId":null,
   "persistent":false,

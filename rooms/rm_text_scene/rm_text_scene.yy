@@ -21,8 +21,8 @@
   ],
   "name":"rm_text_scene",
   "parent":{
-    "name":"1 - Text scene setup",
-    "path":"folders/1 - Text scene setup.yy",
+    "name":"0 - Generals",
+    "path":"folders/1 - Text scene setup/0 - Generals.yy",
   },
   "parentRoom":null,
   "physicsSettings":{

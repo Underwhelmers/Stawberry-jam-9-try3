@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"scr_usable_action_part_callback",
   "parent":{
-    "name":"Helpers",
-    "path":"folders/1 - Text scene setup/Player actions/Helpers.yy",
+    "name":"Objects",
+    "path":"folders/1 - Text scene setup/0 - Generals/Objects.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

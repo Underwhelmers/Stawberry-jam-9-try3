@@ -12,7 +12,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"Objects",
-    "path":"folders/1 - Text scene setup/Player actions/Objects.yy",
+    "path":"folders/1 - Text scene setup/0 - Generals/Objects.yy",
   },
   "parentObjectId":null,
   "persistent":false,

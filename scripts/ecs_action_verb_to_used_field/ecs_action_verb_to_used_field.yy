@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"ecs_action_verb_to_used_field",
   "parent":{
-    "name":"Helpers",
-    "path":"folders/1 - Text scene setup/Player actions/Helpers.yy",
+    "name":"Functions",
+    "path":"folders/1 - Text scene setup/0 - Generals/Functions.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

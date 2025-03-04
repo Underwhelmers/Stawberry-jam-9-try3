@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"StateComponents",
   "parent":{
-    "name":"Components",
-    "path":"folders/1 - Text scene setup/Components.yy",
+    "name":"Structs",
+    "path":"folders/1 - Text scene setup/0 - Generals/Structs.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",
