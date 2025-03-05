@@ -6,7 +6,7 @@
   "name":"CharacterSpecies",
   "parent":{
     "name":"Character generators",
-    "path":"folders/1 - Text scene setup/Character generators.yy",
+    "path":"folders/1 - Text scene setup/1 - Inplementation/Character generators.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

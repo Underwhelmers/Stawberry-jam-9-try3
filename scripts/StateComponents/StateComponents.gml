@@ -1,18 +1,16 @@
 function StateComponents(_name, _parent = undefined) constructor {
 	name = _name;
 	childs = [self];
+	manager = obj_ecs_manager.component_manager;
 	if (_parent) {
 		array_push(_parent.childs, self);
 	}
-	manager = obj_ecs_manager.component_manager;
-	current_entities = ds_list_create();
 	
 	static exists_on = function(entity) {
 		return struct_exists(entity, name);
 	};
 	
 	static default_add = function(entity, value = true) {
-		ds_list_add(current_entities, )
 		manager.add_component(entity, name, value);
 	};
 	

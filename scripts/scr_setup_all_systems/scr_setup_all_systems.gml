@@ -1,0 +1,20 @@
+function scr_setup_all_systems() {
+	ecs_setup_system_body_fluid_buildup();
+	ecs_setup_system_faction_alert();
+	ecs_setup_system_faction_intimacy_alliance();
+	ecs_setup_system_faction_intimacy_norms();
+	ecs_setup_system_faction_jealousy_conflict();
+	ecs_setup_system_faction_leader_jealousy();
+	ecs_setup_system_faction_reaction();
+	ecs_setup_system_faction_reputation_update();
+	ecs_setup_system_fluid_transfer();
+	ecs_setup_system_hygiene_decay();
+	ecs_setup_system_intimacy_gossip();
+	ecs_setup_system_jealousy_behavior();
+	ecs_setup_system_jealousy_detection();
+	ecs_setup_system_npc_hygiene_reaction();
+	ecs_setup_system_npc_initiate_advance();
+	ecs_setup_system_npc_knowledge_sharing();
+	ecs_setup_system_npc_mood_reaction();
+	ecs_setup_system_npc_sensory_reaction();
+}
