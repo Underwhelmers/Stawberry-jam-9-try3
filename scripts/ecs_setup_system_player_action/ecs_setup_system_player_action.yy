@@ -6,7 +6,7 @@
   "name":"ecs_setup_system_player_action",
   "parent":{
     "name":"Instantiators",
-    "path":"folders/1 - Text scene setup/0 - Generals/Instantiators.yy",
+    "path":"folders/1 - Text scene setup/Systems/Instantiators.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",
