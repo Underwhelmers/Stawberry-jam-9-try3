@@ -37,7 +37,6 @@
     {"$GMFolder":"","%Name":"1 - Text scene setup","folderPath":"folders/1 - Text scene setup.yy","name":"1 - Text scene setup","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"0 - Generals","folderPath":"folders/1 - Text scene setup/0 - Generals.yy","name":"0 - Generals","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Functions","folderPath":"folders/1 - Text scene setup/0 - Generals/Functions.yy","name":"Functions","resourceType":"GMFolder","resourceVersion":"2.0",},
-    {"$GMFolder":"","%Name":"Instantiators","folderPath":"folders/1 - Text scene setup/Systems/Instantiators.yy","name":"Instantiators","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Objects","folderPath":"folders/1 - Text scene setup/0 - Generals/Objects.yy","name":"Objects","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Character generators","folderPath":"folders/1 - Text scene setup/Character generators.yy","name":"Character generators","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Instances","folderPath":"folders/1 - Text scene setup/Character generators/Instances.yy","name":"Instances","resourceType":"GMFolder","resourceVersion":"2.0",},
@@ -48,6 +47,7 @@
     {"$GMFolder":"","%Name":"Instances","folderPath":"folders/1 - Text scene setup/Player actions/Instances.yy","name":"Instances","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Systems","folderPath":"folders/1 - Text scene setup/Systems.yy","name":"Systems","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Instances","folderPath":"folders/1 - Text scene setup/Systems/Instances.yy","name":"Instances","resourceType":"GMFolder","resourceVersion":"2.0",},
+    {"$GMFolder":"","%Name":"Instantiators","folderPath":"folders/1 - Text scene setup/Systems/Instantiators.yy","name":"Instantiators","resourceType":"GMFolder","resourceVersion":"2.0",},
   ],
   "IncludedFiles":[
     {"$GMIncludedFile":"","%Name":"GeneralPopups.txt","CopyToMask":-1,"filePath":"datafiles","name":"GeneralPopups.txt","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
