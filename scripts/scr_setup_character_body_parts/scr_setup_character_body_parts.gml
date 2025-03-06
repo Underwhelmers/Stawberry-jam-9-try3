@@ -14,7 +14,7 @@ function scr_setup_character_body_parts() {
 				add_all: function(_body_parts) {
 					for (var i = 0, count = array_length(_body_parts); i < count; i++) {
 						var bp = _body_parts[i];
-						self[$ bp.name] = bp.new_instance();
+						self[$ bp.name] = bp.instantiate();
 					}
 				}
 			};

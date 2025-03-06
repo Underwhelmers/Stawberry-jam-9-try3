@@ -1,4 +1,4 @@
-function Components(_name, _parent = undefined) constructor {
+function Components(_name, _parent = undefined, _add_to = undefined) constructor {
 	name = _name;
 	childs = [self];
 	if (_parent) {
@@ -34,6 +34,8 @@ function Components(_name, _parent = undefined) constructor {
 		}
 	};
 	
-	add_to = default_add;
+	if (_add_to)
+		add_to = method(self, _add_to);
+	else add_to = default_add;
 	remove_from = default_remove;
 }

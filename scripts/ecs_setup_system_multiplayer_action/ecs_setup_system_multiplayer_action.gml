@@ -28,6 +28,15 @@ function ecs_setup_system_multiplayer_action(_action_verb, _entity_requirements_
             if (array_length(entities) > 1) {
                 text = string_replace_all(text, "{name2}", entities[1].name);
             }
+            if (array_length(entities) > 2) {
+                text = string_replace_all(text, "{name3}", entities[2].name);
+            }
+            if (array_length(entities) > 3) {
+                text = string_replace_all(text, "{name4}", entities[3].name);
+            }
+            if (array_length(entities) > 4) {
+                text = string_replace_all(text, "{name5}", entities[4].name);
+            }
 			
             return "-" + text + "-";
         }

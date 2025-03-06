@@ -1,4 +1,4 @@
-function ecs_setup_action_look_at() {
+function ecs_setup_action002_look_at() {
     ecs_setup_system_multiplayer_action(
         "look at {name1}'s {name2}",
         [["is_npc"], ["is_bodypart"]],

@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"initialize_setup",
+  "%Name":"make_new_character",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"initialize_setup",
+  "name":"make_new_character",
   "parent":{
     "name":"4 - Entities",
     "path":"folders/1 - Text scene setup/4 - Entities.yy",

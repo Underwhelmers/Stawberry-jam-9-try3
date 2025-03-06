@@ -7,6 +7,7 @@ function scr_setup_character_species() {
 	Components.types.has_horns = new Components("has_horns");
 	Components.types.has_scales = new Components("has_scales");
 	Components.types.small_body = new Components("small_body");
+	Components.types.pointy_ears = new Components("pointy_ears");
 	Components.types.heat_cycles = new Components("heat_cycles");
 	Components.types.androgynous = new Components("androgynous");
 	Components.types.cold_blooded = new Components("cold_blooded");
@@ -33,7 +34,7 @@ function scr_setup_character_species() {
 			new CharacterGender("male", "majestuous", [
 				CharacterBodyParts.anus,
 				CharacterBodyParts.dick,
-			], ["produces_semen", "voluntary_erection"]),
+			], ["voluntary_erection"]),
 		]
 	);
 

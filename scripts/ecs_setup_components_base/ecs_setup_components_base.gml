@@ -26,6 +26,16 @@ function ecs_setup_components_base() {
     );
 	
 	
+	Components.types.apearance = new Components("apearance");
+	Components.types.apearance.add_to = method(
+        Components.types.apearance,
+        function(entity) {
+            default_add(entity, {
+				specie_description: ""
+			});
+        }
+    );
+	
 	Components.types.position = new Components("position");
 	Components.types.position.add_to = method(
         Components.types.position,
