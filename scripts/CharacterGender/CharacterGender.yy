@@ -6,7 +6,7 @@
   "name":"CharacterGender",
   "parent":{
     "name":"Structs",
-    "path":"folders/1 - Text scene setup/Character generators/Structs.yy",
+    "path":"folders/1 - Text scene setup/2 - Character generators/Structs.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

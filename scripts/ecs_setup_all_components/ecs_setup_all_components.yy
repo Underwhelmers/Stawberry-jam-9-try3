@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"ecs_setup_all_components",
   "parent":{
-    "name":"Components",
-    "path":"folders/1 - Text scene setup/Components.yy",
+    "name":"1 - Components",
+    "path":"folders/1 - Text scene setup/1 - Components.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

@@ -43,7 +43,7 @@ function ECS_EntityTracker(_components) constructor {
 	var candidates = ds_map_values_to_array(obj_ecs_manager.entity_manager.entities);
 	for (var i = 0, count = array_length(candidates); i < count; i++) {
 		if (ecs_entity_fulfills(candidates[i], components)) {
-			ds_list_add(entities, candidates[i]);
+            ds_map_add(entities, candidates[i], {});
 		}
 	}
 }

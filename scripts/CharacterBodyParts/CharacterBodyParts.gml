@@ -4,9 +4,8 @@
 function CharacterBodyParts(_name, _desc, _with_art, _extra_comps = []) constructor {
 	obj_ecs_manager.entity_manager.create_entity(self);
 	
-    Components.types[$ "name"].add_to(self, _name);
-    Components.types[$ "is_body_part"].add_to(self);
-    Components.types[$ "basic_description"].add_to(self, _desc);
+    Components.types[$ "identity"].add_to(self, _name, _desc);
+    Components.types[$ "is_bodypart"].add_to(self);
 	with_article = _with_art;
 	
 	static instantiate = function() {

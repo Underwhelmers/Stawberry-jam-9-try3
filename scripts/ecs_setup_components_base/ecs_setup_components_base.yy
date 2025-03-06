@@ -6,7 +6,7 @@
   "name":"ecs_setup_components_base",
   "parent":{
     "name":"Instances",
-    "path":"folders/1 - Text scene setup/Components/Instances.yy",
+    "path":"folders/1 - Text scene setup/1 - Components/Instances.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

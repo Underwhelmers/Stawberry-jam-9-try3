@@ -17,6 +17,7 @@ function ecs_setup_components_base() {
 	Components.types.identity.add_to = method(
         Components.types.identity,
         function(entity, _name = "", _description = "") {
+			entity.name = _name;
             default_add(entity, {
 				name: _name,
 				description: _description
