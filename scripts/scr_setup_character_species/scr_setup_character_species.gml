@@ -1,9 +1,8 @@
 function scr_setup_character_species() {	
 	Components.types.nimble = new Components("nimble");
 	Components.types.has_fur = new Components("has_fur");
-	Components.types.has_tail = new Components("has_tail");
+	Components.types.can_fly = new Components("can_fly");
 	Components.types.has_claws = new Components("has_claws");
-	Components.types.has_wings = new Components("has_wings");
 	Components.types.lays_eggs = new Components("lays_eggs");
 	Components.types.has_horns = new Components("has_horns");
 	Components.types.has_scales = new Components("has_scales");
@@ -25,7 +24,8 @@ function scr_setup_character_species() {
 			CharacterBodyParts.ass,
 			CharacterBodyParts.tongue,
 			CharacterBodyParts.neck,
-		], ["has_wings"], [
+			CharacterBodyParts.feathered_tail,
+		], ["can_fly"], [
 			new CharacterGender("female", "slender", [
 				CharacterBodyParts.cloeca,
 			], ["lays_eggs"]),
@@ -53,7 +53,7 @@ function scr_setup_character_species() {
 			CharacterBodyParts.thighs,
 			CharacterBodyParts.horns,
 			CharacterBodyParts.tail,	
-		], ["has_horns", "has_fur", "has_tail", "heat_cycles"] , [
+		], ["has_fur", "heat_cycles"] , [
 			new CharacterGender("female", "curvaceous", [
 				CharacterBodyParts.breasts,
 				CharacterBodyParts.vagina,
@@ -81,6 +81,7 @@ function scr_setup_character_species() {
 			CharacterBodyParts.thighs,
 			CharacterBodyParts.tail,
 			CharacterBodyParts.claws,
+			CharacterBodyParts.horns,
 		], ["has_scales", "cold_blooded", "androgynous", "small_body"] , [
 			new CharacterGender("female", "nimble", [
 				CharacterBodyParts.vagina,
@@ -187,7 +188,7 @@ function scr_setup_character_species() {
 			CharacterBodyParts.nipples,
 			CharacterBodyParts.hands,
 			CharacterBodyParts.thighs,
-		], ["has_fur", "burrows", "small_body"] , [
+		], ["has_fur", "small_body"] , [
 			new CharacterGender("female", "plump", [
 				CharacterBodyParts.vagina,
 				CharacterBodyParts.breasts,

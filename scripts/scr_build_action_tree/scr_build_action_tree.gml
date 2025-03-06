@@ -28,6 +28,7 @@ function scr_build_action_tree(player_actions) {
             }
 		} else { // Single-entity action
 			var candidates = ds_map_keys_to_array(action.tracker.entities);
+			
 			for (var j = 0, count2 = array_length(candidates); j < count2; j++) {
 				tree.add_leaf(
 					action.get_text(candidates[j]), {

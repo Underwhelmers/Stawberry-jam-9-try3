@@ -4,7 +4,7 @@ function ecs_setup_action_describe() {
         ["identity"],
         function(entity) {
             var desc = entity.identity.description;
-            scr_chat("THOUGHT", "{0}. {1}", (entity.name), desc);
+            scr_chat("THOUGHT", "{0}... {1}", string_capitalize(entity.name), desc);
         }
     );
 }

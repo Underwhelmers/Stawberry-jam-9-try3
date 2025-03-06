@@ -45,6 +45,8 @@ function scr_setup_character_body_parts() {
     CharacterBodyParts.tentacles = new CharacterBodyParts("tentacles", "Slick, writhing tendrils.", "tentacles", ["is_phallus"]);
     CharacterBodyParts.wings     = new CharacterBodyParts("wings", "Feathered, majestic wings.", "wings");
     CharacterBodyParts.horns     = new CharacterBodyParts("horns", "Curved, imposing horns.", "horns");
-    CharacterBodyParts.tail      = new CharacterBodyParts("tail", "A long, sinuous appendage.", "a tail", ["is_phallus"]); 
     CharacterBodyParts.claws     = new CharacterBodyParts("claws", "Sharp, curved talons.", "claws");
+	
+    CharacterBodyParts.tail      = new CharacterBodyParts("tail", "A long, sinuous appendage.", "a tail", ["is_phallus"]);
+    CharacterBodyParts.feathered_tail = new CharacterBodyParts("feathered tail", "Long magestic feathers.", "a tail");
 }

@@ -4,6 +4,7 @@ function ECS_EntityTracker(_components) constructor {
 	
     static add_entity = function(entity) {
         if (!ds_map_exists(entities, entity)) {
+			scr_inform(entity.entity_id);
             ds_map_add(entities, entity, {});
         }
     }
@@ -20,6 +21,7 @@ function ECS_EntityTracker(_components) constructor {
 	static register_entity = function(entity) {
 		for (var i = 0, count = array_length(all_instances); i < count; i++) {
 			if (ecs_entity_fulfills(entity, all_instances[i].components)) {
+				scr_inform(entity.entity_id);
 				all_instances[i].add_entity(entity);
 			}
 		}
