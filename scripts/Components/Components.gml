@@ -1,4 +1,4 @@
-function StateComponents(_name, _parent = undefined) constructor {
+function Components(_name, _parent = undefined) constructor {
 	name = _name;
 	childs = [self];
 	if (_parent) {

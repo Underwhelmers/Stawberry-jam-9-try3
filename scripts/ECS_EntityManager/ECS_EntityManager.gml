@@ -2,11 +2,9 @@ function ECS_EntityManager(_system_manager) constructor {
     static next_entity_id = 1;
     entities = ds_map_create();
 	
-    static create_entity = function() {
+    static create_entity = function(inst = {}) {
         var entity_id = next_entity_id++;
-		var inst = {
-			entity_id: entity_id
-		}
+		inst.entity_id = entity_id;
         ds_map_add(entities, entity_id, inst);
 		ECS_EntityTracker.register_entity(inst);
         return inst;

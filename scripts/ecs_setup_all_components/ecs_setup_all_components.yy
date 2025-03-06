@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"scr_setup_components_base",
+  "%Name":"ecs_setup_all_components",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"scr_setup_components_base",
+  "name":"ecs_setup_all_components",
   "parent":{
     "name":"Components",
     "path":"folders/1 - Text scene setup/Components.yy",

@@ -104,7 +104,7 @@ function Camera(_x, _y, _width, _height, _viewport_index) constructor {
 	static world_to_gui = function(_point) {
         var _gui_x = (_point.x - x) * zoom;
         var _gui_y = (_point.y - y) * zoom;
-        return new Point2d(gui_x, gui_y);
+        return new Point2d(_gui_x, _gui_y);
     };
 	
 	/* NOT TESTED

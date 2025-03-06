@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"CharacterSpecies",
   "parent":{
-    "name":"Character generators",
-    "path":"folders/1 - Text scene setup/Character generators.yy",
+    "name":"Structs",
+    "path":"folders/1 - Text scene setup/Character generators/Structs.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

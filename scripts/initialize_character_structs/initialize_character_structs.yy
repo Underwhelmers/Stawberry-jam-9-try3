@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"scr_setup_body_parts",
+  "%Name":"initialize_character_structs",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"scr_setup_body_parts",
+  "name":"initialize_character_structs",
   "parent":{
     "name":"Character generators",
     "path":"folders/1 - Text scene setup/Character generators.yy",
