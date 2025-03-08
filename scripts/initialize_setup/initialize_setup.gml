@@ -11,4 +11,6 @@ function initialize_setup() {
 	for(var i = 0; i < guest_count; i++) {
 		global.guests[i] = make_new_character("Faly");
 	}
+	
+	Components.types.sharing_room.update();
 }

@@ -3,19 +3,47 @@ function ecs_setup_action004_push_in() {
         "push your {name1} in their {name2}",
         [["is_bodypart", "is_phallus"], ["is_bodypart", "is_cavity"], ["is_player", "aligned"]],
         function(entities) {
-            var char = entities[0];
-            var bodypart = entities[1];
+            var phallus = entities[0];
+            var cavity = entities[1];
+			var char = entities[2].aligned[$ phallus.name].of;
 			
-            scr_chat((char.name), "*you pushed your {0} in their {1}*", entities[0].name, entities[1].name);
+			char.body[$ cavity.name].is_penetrated = true;
+            scr_chat((char.name), "*Squirms as your {0} enters their {1}*", phallus.name, cavity.name);
         },
-		function(_values) {
-			var _your_part = _values[0];
-			var _their_part = _values[1];
-			var _player = _values[2];
+		function(entities) {
+			var phallus = entities[0];
+            var cavity = entities[1];
+			var player = entities[2];
+			
+			return struct_exists(player.body, phallus.name) && 
+				struct_exists(player.aligned, phallus.name) &&
+				player.aligned[$ phallus.name].to = cavity &&
+				!player.aligned[$ phallus.name].of.body[$ cavity.name].is_penetrated
+				;
+		}
+    );
 	
-			return struct_exists(_player.body, _your_part.name) && 
-				struct_exists(_player.aligned, _your_part.name) &&
-				_player.aligned[$ _your_part.name].to = _their_part
+    ecs_setup_system_multiplayer_action(
+        "push their {name1} in your {name2}",
+        [["is_bodypart", "is_phallus"], ["is_bodypart", "is_cavity"], ["is_player", "aligned"]],
+        function(entities) {
+			var phallus = entities[0];
+            var cavity = entities[1];
+			var player = entities[2];
+			var char = entities[2].aligned[$ cavity.name].of;
+			
+			player.body[$ cavity.name].is_penetrated = true;
+            scr_chat((char.name), "*Holds their breath as his {0} enters your {1}*", phallus.name, cavity.name);
+        },
+		function(entities) {
+			var phallus = entities[0];
+            var cavity = entities[1];
+			var player = entities[2];
+			
+			return struct_exists(player.body, cavity.name) && 
+				struct_exists(player.aligned, cavity.name) &&
+				player.aligned[$ cavity.name].to = phallus &&
+				!player.body[$ cavity.name].is_penetrated
 				;
 		}
     );

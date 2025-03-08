@@ -10,8 +10,8 @@ function ecs_setup_components_base() {
     Components.types.is_npc = new Components("is_npc");
     Components.types.is_item = new Components("is_item");
     Components.types.is_player = new Components("is_player");
-    Components.types.is_location = new Components("is_location");
     Components.types.is_bodypart = new Components("is_bodypart");
+	
 	
 	Components.types.identity = new Components("identity");
 	Components.types.identity.add_to = method(
@@ -32,18 +32,6 @@ function ecs_setup_components_base() {
         function(entity) {
             default_add(entity, {
 				specie_description: ""
-			});
-        }
-    );
-	
-	Components.types.position = new Components("position");
-	Components.types.position.add_to = method(
-        Components.types.position,
-        function(entity, _location = {}) {
-			_location.contents.add(entity);
-			
-            default_add(entity, {
-				location: _position
 			});
         }
     );

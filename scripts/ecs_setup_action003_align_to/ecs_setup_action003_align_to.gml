@@ -1,7 +1,7 @@
 function ecs_setup_action003_align_to() {
     ecs_setup_system_multiplayer_action(
         "align your {name3} to {name1}'s {name2}",
-        [["is_npc", "body"], ["is_bodypart"], ["is_bodypart"]],
+        [["is_npc", "body", "is_in_reach"], ["is_bodypart"], ["is_bodypart"]],
         function(entities) {
             var char = entities[0];
             var their = entities[1];

@@ -9,7 +9,7 @@ function CharacterBodyParts(_name, _desc, _with_art, _extra_comps = []) construc
 	with_article = _with_art;
 	
 	static instantiate = function() {
-		return { covered_by: undefined };
+		return { covered_by: undefined, is_penetrated: false };
 	};
 	
 	for (var i = 0, count = array_length(_extra_comps); i < count; i++) {

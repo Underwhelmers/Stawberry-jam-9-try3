@@ -12,11 +12,12 @@ function Components(_name, _parent = undefined, _add_to = undefined) constructor
 	};
 	
 	static default_add = function(entity, value = true) {
-		ds_list_add(current_entities, )
+		ds_list_add(current_entities, entity);
 		manager.add_component(entity, name, value);
 	};
 	
 	static default_remove = function(entity) {
+		ds_list_remove(current_entities, entity);
 		var removed = [self.name];
 		var pending = ds_queue_create();
 		ds_queue_enqueue(pending, childs);
