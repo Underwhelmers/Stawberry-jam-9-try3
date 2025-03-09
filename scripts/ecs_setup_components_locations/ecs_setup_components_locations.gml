@@ -16,17 +16,64 @@ function ecs_setup_components_locations() {
 	Components.types.sharing_room.update = method(
 		Components.types.sharing_room,
 		function() {
-			ds_list_foreach(current_entities, function(item) {
+			while (!ds_list_empty(current_entities)) {
+				var item = current_entities[|0];
 				self.remove_from(item);
-			});
+			}
 			
-			ds_list_foreach(Components.types.position.current_entities, function(item) {
+			var candidates = Components.types.position.current_entities;
+			for (var i = 0, count = ds_list_size(candidates); i < count; i++) {
+				var item = candidates[|i]
 				if (item.position.location == global.player.position.location) {
 					self.add_to(item);
 				}
-			});
+			}
 		}
 	);
 	
 	Components.types.is_in_reach = new Components("is_in_reach", Components.types.sharing_room);
+	Components.types.proximity = new Components(
+		"proximity",undefined,
+		function(entity, old_proximity = undefined) {
+			if (struct_exists(entity,"proximity")) {
+				remove_from(entity);
+			}
+			
+			if (old_proximity != undefined) {
+				
+			} else {
+				default_add(entity, {
+					everything: [],
+					include: function(newentity) {
+						Components.types.proximity.add_to(entity, self);
+					}
+				});
+			}
+			
+			if (old_proximity != undefined) {
+				
+				entity.proximity = old_proximity;
+				entity.proximity.include(entity);
+			}
+		}
+	);
+	Components.types.proximity.remove_from = method(
+		Components.types.proximity,
+		function(entity) {
+			array_remove(entity.proximity.everything, entity);
+		}
+	)
+	
+	
+	Components.types.portal = new Components(
+		"portal", undefined,
+		function(entity, otherside) {
+			default_add(entity, {
+				other_side: otherside
+			});
+		}
+	);
+	
+	new_word_variant("portal", ["door", "hallway", "arch", "opening", "gate", "corridor"]);
+	new_word_variant("intricate", ["intricate", "ornate", "well crafted", "beutieful"]);
 }
