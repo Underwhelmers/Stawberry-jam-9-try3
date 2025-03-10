@@ -10,9 +10,9 @@ function ecs_setup_action009_cross_portal() {
 			scr_inform("*You entered the {0}*", portal.portal.other_side.name);
 			var list = Components.types.sharing_room.current_entities;
 			var assets = "*You see: ";
-			for (var i = 0, count = array_length(list); i < count; i++) {
+			for (var i = 0, count = ds_list_size(list); i < count; i++) {
 				var curr = list[|i];
-				if (curr != global.player) {
+				if (curr != global.player && !struct_exists(curr,"is_location")) {
 					assets += curr.name + ", ";
 				}
 			}

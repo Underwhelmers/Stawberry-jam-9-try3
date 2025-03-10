@@ -39,7 +39,7 @@ function scr_usable_action_part_callback() {
         var radius = 16 * sqrt(child_count);
         for (var i = 0; i < child_count; i++) {
             var angle = angle_step * i + random_range(-angle_step/2, angle_step/2); // Slight randomness
-            var child_x = SCREEN_W*0.6 + lengthdir_x(radius, angle);
+            var child_x = SCREEN_W*0.7 + lengthdir_x(radius, angle);
             var child_y = SCREEN_H*0.6 + lengthdir_y(radius, angle);
 			
 			var cx = SCREEN_W * 0.5 +lengthdir_x(SCREEN_W,angle);

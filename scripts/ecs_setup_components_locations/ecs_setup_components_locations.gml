@@ -74,6 +74,6 @@ function ecs_setup_components_locations() {
 		}
 	);
 	
-	new_word_variant("portal", ["door", "hallway", "arch", "opening", "gate", "corridor"]);
-	new_word_variant("intricate", ["intricate", "ornate", "well crafted", "beutieful"]);
+	new_word_variant("portal", ["door", "hallway", "arch", "opening", "gate", "corridor", "passage", "archway"]);
+	new_word_variant("intricate", ["intricate", "complex", "elaborate", "exquisite", "detailed", "marble rich"]);
 }

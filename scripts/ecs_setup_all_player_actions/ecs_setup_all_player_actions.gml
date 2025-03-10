@@ -7,4 +7,5 @@ function ecs_setup_all_player_actions() {
 	ecs_setup_action007_pickup();
 	ecs_setup_action008_throw();
 	ecs_setup_action009_cross_portal();
+	ecs_setup_action010_check();
 }
